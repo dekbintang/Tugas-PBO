@@ -1,12 +1,14 @@
 package src.controller;
 
+import src.user.BaseUser;
+import src.user.Admin;
+import src.user.Customer;
 import java.util.Scanner;
 
 public class AuthController {
     private final Scanner scanner = new Scanner(System.in);
-    private boolean isAdmin = false;
 
-    public boolean login() {
+    public BaseUser login() {
         System.out.println("=== Login ===");
         System.out.print("Username: ");
         String username = scanner.nextLine();
@@ -14,25 +16,19 @@ public class AuthController {
         String password = scanner.nextLine();
 
         // Dummy authentication logic
-        if (username.equals("admin") && password.equals("admin123")) {
-            isAdmin = true;
+        if (username.equals("admin") && password.equals("111")) {
             System.out.println("Login sebagai Admin berhasil.");
             pause();
-            return true;
-        } else if (username.equals("customer") && password.equals("cust123")) {
-            isAdmin = false;
+            return new Admin(username, password);  // Mengembalikan objek Admin
+        } else if (username.equals("customer") && password.equals("222")) {
             System.out.println("Login sebagai Customer berhasil.");
             pause();
-            return true;
+            return new Customer(username, password);  // Mengembalikan objek Customer
         } else {
             System.out.println("Login gagal. Username atau password salah.");
             pause();
-            return false;
+            return null;  // Login gagal
         }
-    }
-
-    public boolean isAdmin() {
-        return isAdmin;
     }
 
     private void pause() {

@@ -1,49 +1,61 @@
 package src.model;
 
+import java.util.Objects;
+
 public class SuratBerhargaNegara {
-    private String nama;
-    private double bunga;
-    private int jangkaWaktu; // dalam tahun
-    private double kuotaNasional; // Dalam IDR
+    private String name;
+    private double interestRate;
+    private int durationMonths;
+    private String maturityDate;
+    private double quota;
 
-    // Konstruktor
-    public SuratBerhargaNegara(String nama, double bunga, int jangkaWaktu, double kuotaNasional) {
-        this.nama = nama;
-        this.bunga = bunga;
-        this.jangkaWaktu = jangkaWaktu;
-        this.kuotaNasional = kuotaNasional;
+    public SuratBerhargaNegara(String name, double interestRate, int durationMonths, String maturityDate, double quota) {
+        this.name = name;
+        this.interestRate = interestRate;
+        this.durationMonths = durationMonths;
+        this.maturityDate = maturityDate;
+        this.quota = quota;
     }
 
-    // Getter dan Setter
-    public String getNama() {
-        return nama;
+    public String getName() {
+        return name;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public double getInterestRate() {
+        return interestRate;
     }
 
-    public double getBunga() {
-        return bunga;
+    public int getDurationMonths() {
+        return durationMonths;
     }
 
-    public void setBunga(double bunga) {
-        this.bunga = bunga;
+    public String getMaturityDate() {
+        return maturityDate;
     }
 
-    public int getJangkaWaktu() {
-        return jangkaWaktu;
+    public double getQuota() {
+        return quota;
     }
 
-    public void setJangkaWaktu(int jangkaWaktu) {
-        this.jangkaWaktu = jangkaWaktu;
+    public void reduceQuota(double amount) {
+        this.quota -= amount;
     }
 
-    public double getKuotaNasional() {
-        return kuotaNasional;
+    @Override
+    public String toString() {
+        return name + " | Bunga: " + interestRate + "% | Jangka: " + durationMonths + " bulan | Jatuh Tempo: " + maturityDate + " | Kuota: Rp " + quota;
     }
 
-    public void setKuotaNasional(double kuotaNasional) {
-        this.kuotaNasional = kuotaNasional;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SuratBerhargaNegara that = (SuratBerhargaNegara) o;
+        return name.equals(that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

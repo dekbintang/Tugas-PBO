@@ -1,47 +1,47 @@
 package src.model;
 
-import src.model.Investasi;
+public class Saham {
+    private String code;
+    private String companyName;
+    private double price;
 
-public class Saham extends Investasi {
-    private String kode;
-    private String namaPerusahaan;
-    private double harga;
-
-    // Constructor
-    public Saham(String kode, String namaPerusahaan, double harga) {
-        super(namaPerusahaan, harga);  // Nama perusahaan dan harga diwariskan dari Investasi
-        this.kode = kode;
-        this.namaPerusahaan = namaPerusahaan;
-        this.harga = harga;
+    public Saham(String code, String companyName, double price) {
+        this.code = code;
+        this.companyName = companyName;
+        this.price = price;
     }
 
-    // Getter dan Setter
-    public String getKode() {
-        return kode;
+    public String getCode() {
+        return code;
     }
 
-    public void setKode(String kode) {
-        this.kode = kode;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public String getNamaPerusahaan() {
-        return namaPerusahaan;
+    public double getPrice() {
+        return price;
     }
 
-    public void setNamaPerusahaan(String namaPerusahaan) {
-        this.namaPerusahaan = namaPerusahaan;
-    }
-
-    public double getHarga() {
-        return harga;
-    }
-
-    public void setHarga(double harga) {
-        this.harga = harga;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override
-    public void tampilkanDetail() {
-        System.out.println("Saham [Kode: " + kode + ", Nama Perusahaan: " + namaPerusahaan + ", Harga: " + harga + "]");
+    public String toString() {
+        return code + " - " + companyName + " (Rp " + price + ")";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Saham saham = (Saham) o;
+        return code.equals(saham.code);
+    }
+
+    @Override
+    public int hashCode() {
+        return code.hashCode();
     }
 }

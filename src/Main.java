@@ -1,8 +1,9 @@
-import src.controller.MenuManager;
+package src;
+
+import src.controller.AppController;
 
 public class Main {
     public static void main(String[] args) {
-        MenuManager menuManager = new MenuManager();
-        menuManager.tampilkanMenuAwal(); // alias dari showMainMenu
+        AppController.run();
     }
 }

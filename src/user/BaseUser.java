@@ -1,10 +1,10 @@
-package src.model;
+package src.user;
 
-public abstract class User {
+public abstract class BaseUser {
     protected String username;
     protected String password;
 
-    public User(String username, String password) {
+    public BaseUser(String username, String password) {
         this.username = username;
         this.password = password;
     }
@@ -17,5 +17,5 @@ public abstract class User {
         return password;
     }
 
-    public abstract void menu();
+    public abstract void displayMenu();
 }

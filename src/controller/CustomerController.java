@@ -2,141 +2,146 @@ package src.controller;
 
 import src.model.Saham;
 import src.model.SuratBerhargaNegara;
-
-import java.text.DecimalFormat;
-import java.util.*;
+import src.model.Portfolio;
+import src.util.InputUtil;
+import src.util.ScreenUtil;
+import src.user.Customer;
 
 public class CustomerController {
-    private final ArrayList<Saham> daftarSaham = new ArrayList<>();
-    private final ArrayList<SuratBerhargaNegara> daftarSBN = new ArrayList<>();
-    private final Map<Saham, Integer> sahamDimiliki = new HashMap<>();
-    private final Map<SuratBerhargaNegara, Double> sbnDimiliki = new HashMap<>();
-    private final Scanner scanner = new Scanner(System.in);
-    private final DecimalFormat df = new DecimalFormat("#,###.00");
 
-    public void tambahSaham(Saham saham) {
-        daftarSaham.add(saham);
-    }
-
-    public void tambahSBN(SuratBerhargaNegara sbn) {
-        daftarSBN.add(sbn);
-    }
-
-    public void tampilkanDaftarSaham() {
-        System.out.println("\n=== Daftar Saham Tersedia ===");
-        for (int i = 0; i < daftarSaham.size(); i++) {
-            Saham saham = daftarSaham.get(i);
-            System.out.printf("%d. %s (Kode: %s) - Harga: Rp %s\n",
-                    i + 1,
-                    saham.getNamaPerusahaan(),
-                    saham.getKode(),
-                    df.format(saham.getHarga()));
+    public static void menu(Customer customer) {
+        while (true) {
+            ScreenUtil.clearScreen();
+            System.out.println("=== Menu Customer ===");
+            System.out.println("1. Lihat Portofolio");
+            System.out.println("2. Beli Saham");
+            System.out.println("3. Jual Saham");
+            System.out.println("4. Beli Surat Berharga Negara");
+            System.out.println("5. Jual Surat Berharga Negara");
+            System.out.println("6. Logout");
+            int pilih = InputUtil.inputInt("Pilih: ");
+            switch (pilih) {
+                case 1:
+                    lihatPortofolio(customer.getPortfolio());
+                    break;
+                case 2:
+                    beliSaham(customer.getPortfolio());
+                    break;
+                case 3:
+                    jualSaham(customer.getPortfolio());
+                    break;
+                case 4:
+                    beliSuratBerhargaNegara(customer.getPortfolio());
+                    break;
+                case 5:
+                    jualSuratBerhargaNegara(customer.getPortfolio());
+                    break;
+                case 6:
+                    return;
+                default:
+                    System.out.println("Pilihan tidak valid.");
+                    InputUtil.waitEnter();
+            }
         }
     }
 
-    public void tampilkanDaftarSBN() {
-        System.out.println("\n=== Daftar SBN Tersedia ===");
-        for (int i = 0; i < daftarSBN.size(); i++) {
-            SuratBerhargaNegara sbn = daftarSBN.get(i);
-            System.out.printf("%d. %s - Bunga: %.2f%% - Jangka Waktu: %d tahun - Kuota: Rp %s\n",
-                    i + 1,
-                    sbn.getNama(),
-                    sbn.getBunga(),
-                    sbn.getJangkaWaktu(),
-                    df.format(sbn.getKuotaNasional()));
-        }
+    private static void lihatPortofolio(Portfolio portfolio) {
+        ScreenUtil.clearScreen();
+        System.out.println("=== Portofolio Anda ===");
+        System.out.println("Saham yang dimiliki:");
+        portfolio.getSahamHoldings().forEach((saham, quantity) -> {
+            System.out.println(saham + " | Jumlah: " + quantity);
+        });
+        System.out.println("\nSurat Berharga Negara yang dimiliki:");
+        portfolio.getSuratBerhargaNegaraHoldings().forEach((sbn, amount) -> {
+            System.out.println(sbn + " | Jumlah: Rp " + amount);
+        });
+        InputUtil.waitEnter();
     }
 
-    public void beliSaham() {
-        tampilkanDaftarSaham();
-        System.out.print("Pilih nomor saham yang ingin dibeli: ");
-        int pilihan = scanner.nextInt();
-
-        if (pilihan < 1 || pilihan > daftarSaham.size()) {
-            System.out.println("❌ Pilihan tidak valid.");
+    private static void beliSaham(Portfolio portfolio) {
+        ScreenUtil.clearScreen();
+        System.out.println("=== Beli Saham ===");
+        String code = InputUtil.inputString("Kode saham yang ingin dibeli: ");
+        Saham saham = findSahamByCode(code);
+        if (saham == null) {
+            System.out.println("Saham tidak ditemukan.");
+            InputUtil.waitEnter();
             return;
         }
-
-        Saham sahamDipilih = daftarSaham.get(pilihan - 1);
-        System.out.print("Masukkan jumlah lembar saham yang ingin dibeli: ");
-        int jumlahLembar = scanner.nextInt();
-
-        double totalHarga = sahamDipilih.getHarga() * jumlahLembar;
-        System.out.println("Total harga: Rp " + df.format(totalHarga));
-
-        sahamDimiliki.put(sahamDipilih, sahamDimiliki.getOrDefault(sahamDipilih, 0) + jumlahLembar);
-        System.out.println("✅ Pembelian saham berhasil!");
+        int quantity = InputUtil.inputInt("Jumlah yang ingin dibeli: ");
+        portfolio.buySaham(saham, quantity);
+        System.out.println("Saham " + saham.getCompanyName() + " berhasil dibeli.");
+        InputUtil.waitEnter();
     }
 
-    public void beliSBN() {
-        tampilkanDaftarSBN();
-        System.out.print("Pilih nomor SBN yang ingin dibeli: ");
-        int pilihan = scanner.nextInt();
-
-        if (pilihan < 1 || pilihan > daftarSBN.size()) {
-            System.out.println("❌ Pilihan tidak valid.");
+    private static void jualSaham(Portfolio portfolio) {
+        ScreenUtil.clearScreen();
+        System.out.println("=== Jual Saham ===");
+        String code = InputUtil.inputString("Kode saham yang ingin dijual: ");
+        Saham saham = findSahamByCode(code);
+        if (saham == null) {
+            System.out.println("Saham tidak ditemukan.");
+            InputUtil.waitEnter();
             return;
         }
-
-        SuratBerhargaNegara sbnDipilih = daftarSBN.get(pilihan - 1);
-        System.out.print("Masukkan nominal pembelian (maks: Rp " + df.format(sbnDipilih.getKuotaNasional()) + "): ");
-        double nominalPembelian = scanner.nextDouble();
-
-        if (nominalPembelian > sbnDipilih.getKuotaNasional()) {
-            System.out.println("❌ Nominal melebihi kuota.");
-            return;
+        int quantity = InputUtil.inputInt("Jumlah yang ingin dijual: ");
+        if (portfolio.sellSaham(saham, quantity)) {
+            System.out.println("Saham " + saham.getCompanyName() + " berhasil dijual.");
+        } else {
+            System.out.println("Tidak cukup saham yang dimiliki.");
         }
-
-        sbnDipilih.setKuotaNasional(sbnDipilih.getKuotaNasional() - nominalPembelian);
-        sbnDimiliki.put(sbnDipilih, sbnDimiliki.getOrDefault(sbnDipilih, 0.0) + nominalPembelian);
-        System.out.println("✅ Pembelian SBN berhasil!");
+        InputUtil.waitEnter();
     }
 
-    public void tampilkanPortofolio() {
-        System.out.println("\n=== Portofolio Anda ===");
-
-        // Portofolio Saham
-        System.out.println("\n📊 Saham yang Dimiliki:");
-        double totalSahamNominal = 0.0;
-        double totalNilaiPasarSaham = 0.0;
-
-        for (Map.Entry<Saham, Integer> entry : sahamDimiliki.entrySet()) {
-            Saham saham = entry.getKey();
-            int jumlah = entry.getValue();
-            double nominal = saham.getHarga() * jumlah;
-            double nilaiPasar = nominal;
-            totalSahamNominal += nominal;
-            totalNilaiPasarSaham += nilaiPasar;
-            System.out.printf("%s - %d lembar - Total: Rp %s - Nilai Pasar: Rp %s\n",
-                    saham.getNamaPerusahaan(),
-                    jumlah,
-                    df.format(nominal),
-                    df.format(nilaiPasar));
+    private static void beliSuratBerhargaNegara(Portfolio portfolio) {
+        ScreenUtil.clearScreen();
+        System.out.println("=== Beli Surat Berharga Negara ===");
+        String name = InputUtil.inputString("Nama SBN yang ingin dibeli: ");
+        SuratBerhargaNegara sbn = findSBNByName(name);
+        if (sbn == null) {
+            System.out.println("SBN tidak ditemukan.");
+            InputUtil.waitEnter();
+            return;
         }
-
-        System.out.println("Total Nilai Pembelian Saham: Rp " + df.format(totalSahamNominal));
-        System.out.println("Total Nilai Pasar Saham: Rp " + df.format(totalNilaiPasarSaham));
-
-        // Portofolio SBN
-        System.out.println("\n📄 SBN yang Dimiliki:");
-        double totalSBNNominal = 0.0;
-        double totalKuponBulanan = 0.0;
-
-        for (Map.Entry<SuratBerhargaNegara, Double> entry : sbnDimiliki.entrySet()) {
-            SuratBerhargaNegara sbn = entry.getKey();
-            double nominal = entry.getValue();
-            double kuponBulanan = (sbn.getBunga() / 12.0 / 100.0) * 0.9 * nominal;
-
-            totalSBNNominal += nominal;
-            totalKuponBulanan += kuponBulanan;
-
-            System.out.printf("%s - Nominal: Rp %s - Kupon/Bulan: Rp %s\n",
-                    sbn.getNama(),
-                    df.format(nominal),
-                    df.format(kuponBulanan));
+        double amount = InputUtil.inputDouble("Jumlah yang ingin dibeli (Rp): ");
+        if (amount > sbn.getQuota()) {
+            System.out.println("Kuota SBN tidak cukup.");
+            InputUtil.waitEnter();
+            return;
         }
+        portfolio.buySuratBerhargaNegara(sbn, amount);
+        sbn.reduceQuota(amount);
+        System.out.println("SBN " + sbn.getName() + " berhasil dibeli.");
+        InputUtil.waitEnter();
+    }
 
-        System.out.println("Total Nominal SBN: Rp " + df.format(totalSBNNominal));
-        System.out.println("Total Kupon Bulanan dari SBN: Rp " + df.format(totalKuponBulanan));
+    private static void jualSuratBerhargaNegara(Portfolio portfolio) {
+        ScreenUtil.clearScreen();
+        System.out.println("=== Jual Surat Berharga Negara ===");
+        String name = InputUtil.inputString("Nama SBN yang ingin dijual: ");
+        SuratBerhargaNegara sbn = findSBNByName(name);
+        if (sbn == null) {
+            System.out.println("SBN tidak ditemukan.");
+            InputUtil.waitEnter();
+            return;
+        }
+        double amount = InputUtil.inputDouble("Jumlah yang ingin dijual (Rp): ");
+        if (portfolio.sellSuratBerhargaNegara(sbn, amount)) {
+            System.out.println("SBN " + sbn.getName() + " berhasil dijual.");
+        } else {
+            System.out.println("Tidak cukup SBN yang dimiliki.");
+        }
+        InputUtil.waitEnter();
+    }
+
+    private static Saham findSahamByCode(String code) {
+        // Cari saham berdasarkan kode (implementasi pencarian bisa dikustomisasi)
+        return new Saham(code, "Perusahaan X", 50000.0); // Contoh sementara
+    }
+
+    private static SuratBerhargaNegara findSBNByName(String name) {
+        // Cari SBN berdasarkan nama (implementasi pencarian bisa dikustomisasi)
+        return new SuratBerhargaNegara(name, 5.0, 12, "2026-12-31", 10000000); // Contoh sementara
     }
 }
