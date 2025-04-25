@@ -17,7 +17,7 @@ public class CustomerController {
             System.out.println("2. Beli Saham");
             System.out.println("3. Jual Saham");
             System.out.println("4. Beli Surat Berharga Negara");
-            System.out.println("5. Jual Surat Berharga Negara");
+            System.out.println("5. Simulasi Kupon SBN");
             System.out.println("6. Logout");
             int pilih = InputUtil.inputInt("Pilih: ");
             switch (pilih) {
@@ -34,7 +34,7 @@ public class CustomerController {
                     beliSuratBerhargaNegara(customer.getPortfolio());
                     break;
                 case 5:
-                    jualSuratBerhargaNegara(customer.getPortfolio());
+                    simulasiKuponSBN();
                     break;
                 case 6:
                     return;
@@ -116,22 +116,15 @@ public class CustomerController {
         InputUtil.waitEnter();
     }
 
-    private static void jualSuratBerhargaNegara(Portfolio portfolio) {
+    private static void simulasiKuponSBN() {
         ScreenUtil.clearScreen();
-        System.out.println("=== Jual Surat Berharga Negara ===");
-        String name = InputUtil.inputString("Nama SBN yang ingin dijual: ");
-        SuratBerhargaNegara sbn = findSBNByName(name);
-        if (sbn == null) {
-            System.out.println("SBN tidak ditemukan.");
-            InputUtil.waitEnter();
-            return;
-        }
-        double amount = InputUtil.inputDouble("Jumlah yang ingin dijual (Rp): ");
-        if (portfolio.sellSuratBerhargaNegara(sbn, amount)) {
-            System.out.println("SBN " + sbn.getName() + " berhasil dijual.");
-        } else {
-            System.out.println("Tidak cukup SBN yang dimiliki.");
-        }
+        System.out.println("=== Simulasi Kupon SBN per Bulan ===");
+        double bunga = InputUtil.inputDouble("Masukkan persentase bunga tahunan (%): ");
+        double nominal = InputUtil.inputDouble("Masukkan nominal investasi (Rp): ");
+
+        double kuponPerBulan = (bunga / 12.0 / 100.0) * 0.9 * nominal;
+
+        System.out.printf("Perkiraan kupon yang diterima per bulan: Rp %.2f\n", kuponPerBulan);
         InputUtil.waitEnter();
     }
 
