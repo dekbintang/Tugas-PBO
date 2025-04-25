@@ -69,7 +69,7 @@ public class CustomerController {
             InputUtil.waitEnter();
             return;
         }
-        int quantity = InputUtil.inputInt("Jumlah yang ingin dibeli: ");
+        int quantity = InputUtil.inputInt("Jumlah lembar yang ingin dibeli: ");
         portfolio.buySaham(saham, quantity);
         System.out.println("Saham " + saham.getCompanyName() + " berhasil dibeli.");
         InputUtil.waitEnter();
@@ -85,11 +85,11 @@ public class CustomerController {
             InputUtil.waitEnter();
             return;
         }
-        int quantity = InputUtil.inputInt("Jumlah yang ingin dijual: ");
+        int quantity = InputUtil.inputInt("Jumlah lembar yang ingin dijual: ");
         if (portfolio.sellSaham(saham, quantity)) {
             System.out.println("Saham " + saham.getCompanyName() + " berhasil dijual.");
         } else {
-            System.out.println("Tidak cukup saham yang dimiliki.");
+            System.out.println("Tidak cukup lembar saham yang dimiliki.");
         }
         InputUtil.waitEnter();
     }
