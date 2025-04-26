@@ -1,40 +1,80 @@
 package src.model;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Portfolio {
-    private Map<Saham, Integer> sahamHoldings = new HashMap<>();
-    private Map<SuratBerhargaNegara, Double> suratBerhargaNegaraHoldings = new HashMap<>();
+
+    private List<SahamHolding> sahamHoldings = new ArrayList<>();
+    private List<SuratBerhargaNegaraHolding> suratBerhargaNegaraHoldings = new ArrayList<>();
 
     public void buySaham(Saham saham, int quantity) {
-        sahamHoldings.put(saham, sahamHoldings.getOrDefault(saham, 0) + quantity);
+        SahamHolding existing = findSahamHolding(saham);
+        if (existing != null) {
+            existing.addQuantity(quantity);
+        } else {
+            sahamHoldings.add(new SahamHolding(saham, quantity));
+        }
     }
 
     public boolean sellSaham(Saham saham, int quantity) {
-        int owned = sahamHoldings.getOrDefault(saham, 0);
-        if (quantity > owned) return false;
-        if (quantity == owned) sahamHoldings.remove(saham);
-        else sahamHoldings.put(saham, owned - quantity);
+        SahamHolding existing = findSahamHolding(saham);
+        if (existing == null || existing.getQuantity() < quantity) {
+            return false;
+        }
+        if (existing.getQuantity() == quantity) {
+            sahamHoldings.remove(existing);
+        } else {
+            existing.subtractQuantity(quantity);
+        }
         return true;
     }
 
     public void buySuratBerhargaNegara(SuratBerhargaNegara suratBerhargaNegara, double amount) {
-        suratBerhargaNegaraHoldings.put(suratBerhargaNegara, suratBerhargaNegaraHoldings.getOrDefault(suratBerhargaNegara, 0.0) + amount);
+        SuratBerhargaNegaraHolding existing = findSuratBerhargaNegaraHolding(suratBerhargaNegara);
+        if (existing != null) {
+            existing.addAmount(amount);
+        } else {
+            suratBerhargaNegaraHoldings.add(new SuratBerhargaNegaraHolding(suratBerhargaNegara, amount));
+        }
     }
 
     public boolean sellSuratBerhargaNegara(SuratBerhargaNegara suratBerhargaNegara, double amount) {
-        double owned = suratBerhargaNegaraHoldings.getOrDefault(suratBerhargaNegara, 0.0);
-        if (amount > owned) return false;
-        if (amount == owned) suratBerhargaNegaraHoldings.remove(suratBerhargaNegara);
-        else suratBerhargaNegaraHoldings.put(suratBerhargaNegara, owned - amount);
+        SuratBerhargaNegaraHolding existing = findSuratBerhargaNegaraHolding(suratBerhargaNegara);
+        if (existing == null || existing.getAmount() < amount) {
+            return false;
+        }
+        if (existing.getAmount() == amount) {
+            suratBerhargaNegaraHoldings.remove(existing);
+        } else {
+            existing.subtractAmount(amount);
+        }
         return true;
     }
 
-    public Map<Saham, Integer> getSahamHoldings() {
+    public List<SahamHolding> getSahamHoldings() {
         return sahamHoldings;
     }
 
-    public Map<SuratBerhargaNegara, Double> getSuratBerhargaNegaraHoldings() {
+    public List<SuratBerhargaNegaraHolding> getSuratBerhargaNegaraHoldings() {
         return suratBerhargaNegaraHoldings;
+    }
+
+    private SahamHolding findSahamHolding(Saham saham) {
+        for (SahamHolding holding : sahamHoldings) {
+            if (holding.getSaham().equals(saham)) {
+                return holding;
+            }
+        }
+        return null;
+    }
+
+    private SuratBerhargaNegaraHolding findSuratBerhargaNegaraHolding(SuratBerhargaNegara suratBerhargaNegara) {
+        for (SuratBerhargaNegaraHolding holding : suratBerhargaNegaraHoldings) {
+            if (holding.getSuratBerhargaNegara().equals(suratBerhargaNegara)) {
+                return holding;
+            }
+        }
+        return null;
     }
 }
