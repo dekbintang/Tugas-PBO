@@ -4,11 +4,13 @@ public class Saham {
     private String code;
     private String companyName;
     private double price;
+    private int quantity;
 
     public Saham(String code, String companyName, double price) {
         this.code = code;
         this.companyName = companyName;
         this.price = price;
+        this.quantity = quantity;
     }
 
     public String getCode() {
@@ -25,6 +27,14 @@ public class Saham {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override

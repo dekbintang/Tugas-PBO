@@ -41,6 +41,10 @@ public class SuratBerhargaNegara {
         this.quota -= amount;
     }
 
+    public void setQuota(double quota) {
+        this.quota = quota;
+    }
+
     @Override
     public String toString() {
         return name + " | Bunga: " + interestRate + "% | Jangka: " + durationMonths + " bulan | Jatuh Tempo: " + maturityDate + " | Kuota: Rp " + quota;
