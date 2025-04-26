@@ -11,10 +11,10 @@ import java.util.ArrayList;
 public class AdminController {
 
     // Daftar Saham yang dikelola admin
-    private static List<Saham> daftarSaham = new ArrayList<>();
+    static List<Saham> daftarSaham = new ArrayList<>();
 
     // Daftar Surat Berharga Negara (SBN) yang dikelola admin
-    private static List<SuratBerhargaNegara> daftarSBN = new ArrayList<>();
+    static List<SuratBerhargaNegara> daftarSBN = new ArrayList<>();
 
     public static void menu() {
         while (true) {

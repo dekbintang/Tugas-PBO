@@ -7,6 +7,9 @@ import src.util.InputUtil;
 import src.util.ScreenUtil;
 import src.user.Customer;
 
+import static src.controller.AdminController.daftarSBN;
+import static src.controller.AdminController.daftarSaham;
+
 public class CustomerController {
 
     public static void menu(Customer customer) {
@@ -58,9 +61,8 @@ public class CustomerController {
         });
         InputUtil.waitEnter();
     }
-
     private static void beliSaham(Portfolio portfolio) {
-        ScreenUtil.clearScreen();
+        ScreenUtil  .clearScreen();
         System.out.println("=== Beli Saham ===");
         String code = InputUtil.inputString("Kode saham yang ingin dibeli: ");
         Saham saham = findSahamByCode(code);
@@ -129,12 +131,20 @@ public class CustomerController {
     }
 
     private static Saham findSahamByCode(String code) {
-        // Cari saham berdasarkan kode (implementasi pencarian bisa dikustomisasi)
-        return new Saham(code, "Perusahaan X", 50000.0); // Contoh sementara
+        for (Saham saham : daftarSaham) {
+            if (saham.getCode().equalsIgnoreCase(code)) {
+                return saham;
+            }
+        }
+        return null; // Tidak ditemukan
     }
 
     private static SuratBerhargaNegara findSBNByName(String name) {
-        // Cari SBN berdasarkan nama (implementasi pencarian bisa dikustomisasi)
-        return new SuratBerhargaNegara(name, 5.0, 12, "2026-12-31", 10000000); // Contoh sementara
+        for (SuratBerhargaNegara sbn : daftarSBN) {
+            if (sbn.getName().equalsIgnoreCase(name)) {
+                return sbn;
+            }
+        }
+        return null; // Tidak ditemukan
     }
 }
