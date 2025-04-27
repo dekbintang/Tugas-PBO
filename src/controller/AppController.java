@@ -5,6 +5,7 @@ import src.user.Admin;
 import src.user.Customer;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
+import src.view.AppView;
 
 public class AppController {
     public static void run() {
@@ -12,16 +13,14 @@ public class AppController {
 
         while (true) {
             ScreenUtil.clearScreen();
-            System.out.println("=== Program Investasi Sederhana ===");
-            System.out.println("1. Login");
-            System.out.println("2. Keluar");
+            AppView.displayMainMenu();
             int pilih = InputUtil.inputInt("Pilih: ");
 
             switch (pilih) {
                 case 1:
                     BaseUser user = auth.login();
                     if (user == null) {
-                        System.out.println("Login gagal!");
+                        AppView.displayLoginFailed();
                         InputUtil.waitEnter();
                         break;
                     }
@@ -32,10 +31,10 @@ public class AppController {
                     }
                     break;
                 case 2:
-                    System.out.println("Terima kasih telah menggunakan aplikasi.");
+                    AppView.displayExitMessage();
                     return;
                 default:
-                    System.out.println("Pilihan tidak valid.");
+                    AppView.displayInvalidChoice();
                     InputUtil.waitEnter();
             }
         }
