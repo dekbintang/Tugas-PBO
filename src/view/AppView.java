@@ -6,24 +6,42 @@ public class AppView {
 
     public static void displayMainMenu() {
         TableView table = new TableView();
-        table.setHeaders("No", "Menu");
+        table.setHeaders("Program Investasi Sederhana");
 
-        table.addRow("1", "Login");
-        table.addRow("2", "Keluar");
+        table.addRow("1. Login");
+        table.addRow("2. Keluar");
 
-        System.out.println("=== Program Investasi Sederhana ===");
+        table.render();
+    }
+
+    public static void displayLoginForm() {
+        TableView table = new TableView();
+        table.setHeaders("Form Login");
+
         table.render();
     }
 
     public static void displayLoginFailed() {
-        System.out.println("Login gagal!");
+        TableView table = new TableView();
+        table.setHeaders("Informasi");
+        table.addRow("Login gagal! Silakan coba lagi.");
+
+        table.render();
     }
 
     public static void displayExitMessage() {
-        System.out.println("Terima kasih telah menggunakan aplikasi.");
+        TableView table = new TableView();
+        table.setHeaders("Informasi");
+        table.addRow("Terima kasih telah menggunakan aplikasi.");
+
+        table.render();
     }
 
     public static void displayInvalidChoice() {
-        System.out.println("Pilihan tidak valid.");
+        TableView table = new TableView();
+        table.setHeaders("Informasi");
+        table.addRow("Pilihan tidak valid.");
+
+        table.render();
     }
 }

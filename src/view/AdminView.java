@@ -41,4 +41,54 @@ public class AdminView {
 
         table.render();
     }
+
+    // Method tambahan untuk menampilkan menu-menu dalam bentuk tabel
+
+    public static void displayAdminMainMenu() {
+        TableView table = new TableView();
+        table.setHeaders("Selamat Datang Admin");
+
+        table.addRow("1. Saham");
+        table.addRow("2. Surat Berharga Negara (SBN)");
+        table.addRow("3. Logout");
+
+        table.render();
+    }
+
+    public static void displaySahamMenu() {
+        TableView table = new TableView();
+        table.setHeaders("Saham");
+
+        table.addRow("1. Tambah Saham");
+        table.addRow("2. Ubah Harga Saham");
+        table.addRow("3. Tampilkan Daftar Saham");
+        table.addRow("4. Kembali");
+
+        table.render();
+    }
+
+    public static void displaySBNMenu() {
+        TableView table = new TableView();
+        table.setHeaders("Surat Berharga Negara");
+
+        table.addRow("1. Tambah SBN");
+        table.addRow("2. Tampilkan Daftar SBN");
+        table.addRow("3. Kembali");
+
+        table.render();
+    }
+
+    public static void displayHeader(String title) {
+        TableView table = new TableView();
+        table.setHeaders(title);
+        table.render();
+    }
+
+    public static void displayMessage(String message) {
+        TableView table = new TableView();
+        table.setHeaders("Informasi");
+        table.addRow(message);
+
+        table.render();
+    }
 }
