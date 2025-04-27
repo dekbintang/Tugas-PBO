@@ -13,13 +13,7 @@ public class CustomerController {
     public static void menu(Customer customer) {
         while (true) {
             ScreenUtil.clearScreen();
-            System.out.println("=== Menu Customer ===");
-            System.out.println("1. Lihat Portofolio");
-            System.out.println("2. Beli Saham");
-            System.out.println("3. Jual Saham");
-            System.out.println("4. Beli Surat Berharga Negara");
-            System.out.println("5. Simulasi Kupon SBN");
-            System.out.println("6. Logout");
+            CustomerView.displayCustomerMenu();
             int pilih = InputUtil.inputInt("Pilih: ");
             switch (pilih) {
                 case 1:
@@ -77,7 +71,7 @@ public class CustomerController {
             return;
         }
 
-        System.out.println("=== Daftar Saham ===");
+        CustomerView.displaySectionHeader("Daftar Saham");
         CustomerView.displayAvailableSahamTable(daftarSaham);
 
         String code = InputUtil.inputString("Kode saham yang ingin dibeli: ");
@@ -102,7 +96,7 @@ public class CustomerController {
             return;
         }
 
-        System.out.println("=== Saham yang Anda Miliki ===");
+        CustomerView.displaySectionHeader("Saham yang Anda Miliki");
         CustomerView.displayPortfolioSahamTable(portfolio.getSahamHoldings());
 
         String code = InputUtil.inputString("Kode saham yang ingin dijual: ");
@@ -139,7 +133,7 @@ public class CustomerController {
 
     private static void beliSuratBerhargaNegara(Portfolio portfolio) {
         ScreenUtil.clearScreen();
-        System.out.println("=== Beli Surat Berharga Negara ===");
+        CustomerView.displaySectionHeader("Beli Surat Berharga Negara");
 
         if (daftarSBN.isEmpty()) {
             System.out.println("Tidak ada SBN tersedia.");
@@ -147,7 +141,7 @@ public class CustomerController {
             return;
         }
 
-        System.out.println("Daftar SBN:");
+        CustomerView.displaySectionHeader("Daftar SBN");
         CustomerView.displayAvailableSBNTable(daftarSBN);
 
 
@@ -192,13 +186,14 @@ public class CustomerController {
 
     private static void simulasiKuponSBN() {
         ScreenUtil.clearScreen();
-        System.out.println("=== Simulasi Kupon SBN per Bulan ===");
+        CustomerView.displaySectionHeader("Simulasi Kupon SBN per Bulan");
+
         double bunga = InputUtil.inputDouble("Masukkan persentase bunga tahunan (%): ");
         double nominal = InputUtil.inputDouble("Masukkan nominal investasi (Rp): ");
 
         double kuponPerBulan = (bunga / 12.0 / 100.0) * 0.9 * nominal;
 
-        System.out.println("\nHasil Simulasi:");
+        CustomerView.displaySectionHeader("Hasil Simulasi");
         CustomerView.displayKuponSimulation(bunga, nominal, kuponPerBulan);
         InputUtil.waitEnter();
     }

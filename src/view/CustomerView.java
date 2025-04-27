@@ -8,6 +8,21 @@ import java.util.List;
 
 public class CustomerView {
 
+    public static void displayCustomerMenu() {
+        TableView table = new TableView();
+        table.setHeaders("Selamat Datang Customer");
+
+        table.addRow("1. Lihat Portofolio");
+        table.addRow("2. Beli Saham");
+        table.addRow("3. Jual Saham");
+        table.addRow("4. Beli Surat Berharga Negara");
+        table.addRow("5. Simulasi Kupon SBN");
+        table.addRow("6. Logout");
+
+        System.out.println("=== Menu Customer ===");
+        table.render();
+    }
+
     public static void displayPortfolioSahamTable(List<SahamHolding> sahamHoldings) {
         TableView table = new TableView();
         table.setHeaders("No", "Kode", "Nama Perusahaan", "Harga (Rp)", "Jumlah", "Total (Rp)");
@@ -98,6 +113,18 @@ public class CustomerView {
                 String.format("%.2f", kuponPerBulan)
         );
 
+        table.render();
+    }
+
+    public static void displayPortofolioHeader(){
+        TableView table = new TableView();
+        table.setHeaders("Portofolio Anda");
+        table.render();
+    }
+
+    public static void displaySectionHeader(String title){
+        TableView table = new TableView();
+        table.setHeaders(title);
         table.render();
     }
 }
