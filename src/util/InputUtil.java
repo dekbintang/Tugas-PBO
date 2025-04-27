@@ -11,7 +11,9 @@ public class InputUtil {
             System.out.print("Input harus berupa angka. Coba lagi: ");
             scanner.next();
         }
-        return scanner.nextInt();
+        int value = scanner.nextInt();
+        scanner.nextLine(); // Membersihkan buffer
+        return value;
     }
 
     public static double inputDouble(String prompt) {
@@ -20,17 +22,18 @@ public class InputUtil {
             System.out.print("Input harus berupa angka desimal. Coba lagi: ");
             scanner.next();
         }
-        return scanner.nextDouble();
+        double value = scanner.nextDouble();
+        scanner.nextLine(); // Membersihkan buffer
+        return value;
     }
 
     public static String inputString(String prompt) {
         System.out.print(prompt);
-        return scanner.next();
+        return scanner.nextLine();
     }
 
     public static void waitEnter() {
         System.out.println("\nTekan Enter untuk melanjutkan...");
-        scanner.nextLine();
         scanner.nextLine();
     }
 }

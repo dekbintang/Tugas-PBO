@@ -4,6 +4,7 @@ import src.model.*;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
 import src.user.Customer;
+import src.view.CustomerView;
 
 import static src.controller.AdminController.*;
 
@@ -49,27 +50,36 @@ public class CustomerController {
         ScreenUtil.clearScreen();
         System.out.println("=== Portofolio Anda ===");
 
-        System.out.println("Saham yang dimiliki:");
-        for (SahamHolding holding : portfolio.getSahamHoldings()) {
-            System.out.println(holding.getSaham() + " | Jumlah: " + holding.getQuantity());
+        System.out.println("\nSaham yang dimiliki:");
+        if (portfolio.getSahamHoldings().isEmpty()) {
+            System.out.println("Anda belum memiliki saham.");
+        } else {
+            CustomerView.displayPortfolioSahamTable(portfolio.getSahamHoldings());
         }
 
         System.out.println("\nSurat Berharga Negara yang dimiliki:");
-        for (SuratBerhargaNegaraHolding holding : portfolio.getSuratBerhargaNegaraHoldings()) {
-            System.out.println(holding.getSuratBerhargaNegara() + " | Jumlah: Rp " + holding.getAmount());
+        if (portfolio.getSuratBerhargaNegaraHoldings().isEmpty()) {
+            System.out.println("Anda belum memiliki SBN.");
+        } else {
+            CustomerView.displayPortfolioSBNTable(portfolio.getSuratBerhargaNegaraHoldings());
         }
 
         InputUtil.waitEnter();
     }
 
     private static void beliSaham(Portfolio portfolio) {
-        ScreenUtil  .clearScreen();
+        ScreenUtil.clearScreen();
         System.out.println("=== Beli Saham ===");
-        System.out.println("=== Daftar Saham ===");
-        for (int i = 0; i < daftarSaham.size(); i++) {
-            Saham saham = daftarSaham.get(i);
-            System.out.printf("%d. %s (%s) - Harga: Rp%.2f\n", (i + 1), saham.getCompanyName(), saham.getCode(), saham.getPrice());
+
+        if (daftarSaham.isEmpty()) {
+            System.out.println("Tidak ada saham tersedia.");
+            InputUtil.waitEnter();
+            return;
         }
+
+        System.out.println("=== Daftar Saham ===");
+        CustomerView.displayAvailableSahamTable(daftarSaham);
+
         String code = InputUtil.inputString("Kode saham yang ingin dibeli: ");
         Saham saham = findSahamByCode(code);
         if (saham == null) {
@@ -79,7 +89,7 @@ public class CustomerController {
         }
         int quantity = InputUtil.inputInt("Jumlah lembar yang ingin dibeli: ");
         portfolio.buySaham(saham, quantity);
-        System.out.println("Saham " + saham.getCompanyName() + " berhasil dibeli.");
+        System.out.println("Saham " + saham.getCompanyName() + " berhasil dibeli sebanyak " + quantity + " lembar.");
         InputUtil.waitEnter();
     }
 
@@ -92,14 +102,8 @@ public class CustomerController {
             return;
         }
 
-        int index = 1;
-        for (SahamHolding holding : portfolio.getSahamHoldings()) {
-            Saham saham = holding.getSaham();
-            int quantity = holding.getQuantity();
-            System.out.printf("%d. %s (%s) - Harga: Rp%.2f | Jumlah: %d lembar\n",
-                    index, saham.getCompanyName(), saham.getCode(), saham.getPrice(), quantity);
-            index++;
-        }
+        System.out.println("=== Saham yang Anda Miliki ===");
+        CustomerView.displayPortfolioSahamTable(portfolio.getSahamHoldings());
 
         String code = InputUtil.inputString("Kode saham yang ingin dijual: ");
         SahamHolding selectedHolding = null;
@@ -144,10 +148,8 @@ public class CustomerController {
         }
 
         System.out.println("Daftar SBN:");
-        for (int i = 0; i < daftarSBN.size(); i++) {
-            SuratBerhargaNegara sbn = daftarSBN.get(i);
-            System.out.printf("%d. %s - Bunga: %.2f%%, Kuota: Rp%.2f\n", (i + 1), sbn.getName(), sbn.getInterestRate(), sbn.getQuota());
-        }
+        CustomerView.displayAvailableSBNTable(daftarSBN);
+
 
         // Tanya nama SBN yang ingin dibeli
         String namaSBN = InputUtil.inputString("Nama Surat Berharga Negara yang ingin dibeli: ");
@@ -180,7 +182,6 @@ public class CustomerController {
 
 // Kalau lolos semua validasi, di sini bisa lanjut proses pembelian
 
-
         sbnDipilih.setQuota(sbnDipilih.getQuota() - jumlah);
         portfolio.buySuratBerhargaNegara(sbnDipilih, jumlah);
 
@@ -197,7 +198,8 @@ public class CustomerController {
 
         double kuponPerBulan = (bunga / 12.0 / 100.0) * 0.9 * nominal;
 
-        System.out.printf("Perkiraan kupon yang diterima per bulan: Rp %.2f\n", kuponPerBulan);
+        System.out.println("\nHasil Simulasi:");
+        CustomerView.displayKuponSimulation(bunga, nominal, kuponPerBulan);
         InputUtil.waitEnter();
     }
 

@@ -4,6 +4,7 @@ import src.model.Saham;
 import src.model.SuratBerhargaNegara;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
+import src.view.AdminView;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -114,10 +115,8 @@ public class AdminController {
             return;
         }
 
-        // Menampilkan daftar saham
-        for (int i = 0; i < daftarSaham.size(); i++) {
-            System.out.println((i + 1) + ". " + daftarSaham.get(i));
-        }
+        // Menampilkan daftar saham dalam bentuk tabel
+        AdminView.displaySahamTable(daftarSaham);
 
         // Memilih saham yang akan diubah harga
         int pilihSaham = InputUtil.inputInt("Pilih saham yang ingin diubah harganya: ");
@@ -138,13 +137,12 @@ public class AdminController {
 
     // Menampilkan daftar saham
     private static void showSahamList() {
+        ScreenUtil.clearScreen();
         if (daftarSaham.isEmpty()) {
             System.out.println("Tidak ada saham yang tersedia.");
         } else {
             System.out.println("=== Daftar Saham ===");
-            for (Saham saham : daftarSaham) {
-                System.out.println(saham);
-            }
+            AdminView.displaySahamTable(daftarSaham);
         }
         InputUtil.waitEnter();
     }
@@ -167,13 +165,12 @@ public class AdminController {
 
     // Menampilkan daftar SBN
     private static void showSBNList() {
+        ScreenUtil.clearScreen();
         if (daftarSBN.isEmpty()) {
             System.out.println("Tidak ada SBN yang tersedia.");
         } else {
             System.out.println("=== Daftar Surat Berharga Negara (SBN) ===");
-            for (SuratBerhargaNegara sbn : daftarSBN) {
-                System.out.println(sbn);
-            }
+            AdminView.displaySBNTable(daftarSBN);
         }
         InputUtil.waitEnter();
     }
