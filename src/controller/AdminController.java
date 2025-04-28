@@ -5,7 +5,6 @@ import src.model.SuratBerhargaNegara;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
 import src.view.TableView;
-//import src.view.TableView;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -95,7 +94,7 @@ public class AdminController {
         Saham sahamBaru = new Saham(kode, namaPerusahaan, harga, kuantitas);
         daftarSaham.add(sahamBaru);
 
-        TableView.displayMessage("Saham berhasil ditambahkan: " + sahamBaru);
+        TableView.displayInformation(sahamBaru);
         InputUtil.waitEnter();
     }
 
