@@ -18,19 +18,19 @@ public class CustomerController {
             int pilih = InputUtil.inputInt("Pilih: ");
             switch (pilih) {
                 case 1:
-                    lihatPortofolio(customer.getPortfolio());
+                    viewPortofolio(customer.getPortfolio());
                     break;
                 case 2:
-                    beliSaham(customer.getPortfolio());
+                    buySaham(customer.getPortfolio());
                     break;
                 case 3:
-                    jualSaham(customer.getPortfolio());
+                    sellSaham(customer.getPortfolio());
                     break;
                 case 4:
-                    beliSuratBerhargaNegara(customer.getPortfolio());
+                    buySuratBerhargaNegara(customer.getPortfolio());
                     break;
                 case 5:
-                    simulasiKuponSBN();
+                    sbnCouponSimulation();
                     break;
                 case 6:
                     return;
@@ -41,7 +41,7 @@ public class CustomerController {
         }
     }
 
-    private static void lihatPortofolio(Portfolio portfolio) {
+    private static void viewPortofolio(Portfolio portfolio) {
         ScreenUtil.clearScreen();
         TableView.displayPortfolioTitle();
 
@@ -62,7 +62,7 @@ public class CustomerController {
         InputUtil.waitEnter();
     }
 
-    private static void beliSaham(Portfolio portfolio) {
+    private static void buySaham(Portfolio portfolio) {
         ScreenUtil.clearScreen();
 
         if (daftarSaham.isEmpty()) {
@@ -96,7 +96,7 @@ public class CustomerController {
         InputUtil.waitEnter();
     }
 
-    private static void jualSaham(Portfolio portfolio) {
+    private static void sellSaham(Portfolio portfolio) {
         ScreenUtil.clearScreen();
         System.out.println("=== Jual Saham ===");
         if (portfolio.getSahamHoldings().isEmpty()) {
@@ -140,7 +140,7 @@ public class CustomerController {
     }
 
 
-    private static void beliSuratBerhargaNegara(Portfolio portfolio) {
+    private static void buySuratBerhargaNegara(Portfolio portfolio) {
         ScreenUtil.clearScreen();
         if (daftarSBN.isEmpty()) {
             System.out.println("Tidak ada SBN tersedia.");
@@ -153,20 +153,20 @@ public class CustomerController {
         // Tanya nama SBN yang ingin dibeli
         String namaSBN = InputUtil.inputString("Nama Surat Berharga Negara yang ingin dibeli: ");
 
-// Cari SBN berdasarkan nama
+        // Cari SBN berdasarkan nama
         SuratBerhargaNegara sbnDipilih = findSBNByName(namaSBN);
 
-// Cek apakah ketemu
+        // Cek apakah ketemu
         if (sbnDipilih == null) {
             System.out.println("SBN tidak ditemukan.");
             InputUtil.waitEnter();
             return;
         }
 
-// Kalau ketemu, lanjut input jumlah
+        // Kalau ketemu, lanjut input jumlah
         double jumlah = InputUtil.inputDouble("Jumlah pembelian Kuota (Rp): ");
 
-// Validasi jumlah
+        // Validasi jumlah
         if (jumlah <= 0) {
             System.out.println("Jumlah pembelian harus lebih dari 0.");
             InputUtil.waitEnter();
@@ -179,7 +179,7 @@ public class CustomerController {
             return;
         }
 
-// Kalau lolos semua validasi, di sini bisa lanjut proses pembelian
+        // Kalau lolos semua validasi, di sini bisa lanjut proses pembelian
 
         sbnDipilih.setQuota(sbnDipilih.getQuota() - jumlah);
         portfolio.buySuratBerhargaNegara(sbnDipilih, jumlah);
@@ -189,7 +189,7 @@ public class CustomerController {
     }
 
 
-    private static void simulasiKuponSBN() {
+    private static void sbnCouponSimulation() {
         ScreenUtil.clearScreen();
         TableView.displaySectionHeader("Simulasi Kupon SBN per Bulan");
 

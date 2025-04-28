@@ -37,10 +37,6 @@ public class SuratBerhargaNegara {
         return quota;
     }
 
-    public void reduceQuota(double amount) {
-        this.quota -= amount;
-    }
-
     public void setQuota(double quota) {
         this.quota = quota;
     }

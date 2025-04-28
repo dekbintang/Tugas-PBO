@@ -6,7 +6,6 @@ import src.user.Customer;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
 import src.view.TableView;
-//import src.view.TableView;
 
 public class AppController {
     public static void run() {

@@ -11,9 +11,6 @@ public class SahamHolding {
         this.code = code;
     }
 
-    public SahamHolding(Saham saham, int quantity) {
-    }
-
     public Saham getSaham() {
         return saham;
     }

@@ -21,7 +21,4 @@ public class SuratBerhargaNegaraHolding {
         this.amount += value;
     }
 
-    public void subtractAmount(double value) {
-        this.amount -= value;
-    }
 }
