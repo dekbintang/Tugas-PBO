@@ -4,6 +4,7 @@ import src.model.Saham;
 import src.model.SuratBerhargaNegara;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
+import src.view.TableView;
 //import src.view.AdminView;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class AdminController {
     public static void menu() {
         while (true) {
             ScreenUtil.clearScreen();
-            AdminView.displayAdminMainMenu();
+            TableView.displayAdminMainMenu();
             int pilih = InputUtil.inputInt("Pilih: ");
             switch (pilih) {
                 case 1:
@@ -32,7 +33,7 @@ public class AdminController {
                 case 3:
                     return;
                 default:
-                    AdminView.displayMessage("Pilihan tidak valid.");
+                    TableView.displayMessage("Pilihan tidak valid.");
                     InputUtil.waitEnter();
             }
         }
@@ -41,7 +42,7 @@ public class AdminController {
     private static void sahamMenu() {
         while (true) {
             ScreenUtil.clearScreen();
-            AdminView.displaySahamMenu();
+            TableView.displaySahamMenu();
             int pilih = InputUtil.inputInt("Pilih: ");
             switch (pilih) {
                 case 1:
@@ -65,7 +66,7 @@ public class AdminController {
     private static void sbnMenu() {
         while (true) {
             ScreenUtil.clearScreen();
-            AdminView.displaySBNMenu();
+            TableView.displaySBNMenu();
             int pilih = InputUtil.inputInt("Pilih: ");
             switch (pilih) {
                 case 1:
@@ -85,7 +86,7 @@ public class AdminController {
 
     private static void addSaham() {
         ScreenUtil.clearScreen();
-        AdminView.displayHeader("Tambah Saham Baru");
+        TableView.displayHeader("Tambah Saham Baru");
         String kode = InputUtil.inputString("Kode Saham: ");
         String namaPerusahaan = InputUtil.inputString("Nama Perusahaan: ");
         double harga = InputUtil.inputDouble("Harga Saham: ");
@@ -94,14 +95,14 @@ public class AdminController {
         Saham sahamBaru = new Saham(kode, namaPerusahaan, harga, kuantitas);
         daftarSaham.add(sahamBaru);
 
-        AdminView.displayMessage("Saham berhasil ditambahkan: " + sahamBaru);
+        TableView.displayMessage("Saham berhasil ditambahkan: " + sahamBaru);
         InputUtil.waitEnter();
     }
 
     // Metode untuk mengubah harga saham
     private static void modifySahamPrice() {
         ScreenUtil.clearScreen();
-        AdminView.displayHeader("Ubah Harga Saham");
+        TableView.displayHeader("Ubah Harga Saham");
         if (daftarSaham.isEmpty()) {
             AdminView.displayMessage("Tidak ada saham yang tersedia.");
             InputUtil.waitEnter();
@@ -109,12 +110,12 @@ public class AdminController {
         }
 
         // Menampilkan daftar saham dalam bentuk tabel
-        AdminView.displaySahamTable(daftarSaham);
+        TableView.displaySahamTable(daftarSaham);
 
         // Memilih saham yang akan diubah harga
         int pilihSaham = InputUtil.inputInt("Pilih saham yang ingin diubah harganya: ");
         if (pilihSaham < 1 || pilihSaham > daftarSaham.size()) {
-            AdminView.displayMessage("Pilihan tidak valid.");
+            TableView.displayMessage("Pilihan tidak valid.");
             InputUtil.waitEnter();
             return;
         }
@@ -124,7 +125,7 @@ public class AdminController {
         double hargaBaru = InputUtil.inputDouble("Masukkan harga baru untuk " + sahamDipilih.getCompanyName() + ": ");
         sahamDipilih.setPrice(hargaBaru);
 
-        AdminView.displayMessage("Harga saham " + sahamDipilih.getCompanyName() + " berhasil diubah menjadi: Rp " + hargaBaru);
+        TableView.displayMessage("Harga saham " + sahamDipilih.getCompanyName() + " berhasil diubah menjadi: Rp " + hargaBaru);
         InputUtil.waitEnter();
     }
 
@@ -132,10 +133,10 @@ public class AdminController {
     private static void showSahamList() {
         ScreenUtil.clearScreen();
         if (daftarSaham.isEmpty()) {
-            AdminView.displayMessage("Tidak ada saham yang tersedia.");
+            TableView.displayMessage("Tidak ada saham yang tersedia.");
         } else {
-            AdminView.displayHeader("Daftar Saham");
-            AdminView.displaySahamTable(daftarSaham);
+            TableView.displayHeader("Daftar Saham");
+            TableView.displaySahamTable(daftarSaham);
         }
         InputUtil.waitEnter();
     }
@@ -143,7 +144,7 @@ public class AdminController {
     // Menambah SBN ke daftar
     private static void addSBN() {
         ScreenUtil.clearScreen();
-        AdminView.displayHeader("Tambah Surat Berharga Negara (SBN)");
+        TableView.displayHeader("Tambah Surat Berharga Negara (SBN)");
         String nama = InputUtil.inputString("Nama SBN: ");
         double bunga = InputUtil.inputDouble("Bunga SBN: ");
         int jangkaWaktu = InputUtil.inputInt("Jangka Waktu (bulan): ");
@@ -153,7 +154,7 @@ public class AdminController {
         SuratBerhargaNegara sbnBaru = new SuratBerhargaNegara(nama, bunga, jangkaWaktu, jatuhTempo, kuota);
         daftarSBN.add(sbnBaru);
 
-        AdminView.displayMessage("SBN berhasil ditambahkan: " + sbnBaru);
+        TableView.displayMessage("SBN berhasil ditambahkan: " + sbnBaru);
         InputUtil.waitEnter();
     }
 
@@ -161,7 +162,7 @@ public class AdminController {
     private static void showSBNList() {
         ScreenUtil.clearScreen();
         if (daftarSBN.isEmpty()) {
-            AdminView.displayMessage("Tidak ada SBN yang tersedia.");
+            TableView.displayMessage("Tidak ada SBN yang tersedia.");
         } else {
             AdminView.displayHeader("Daftar Surat Berharga Negara (SBN)");
             AdminView.displaySBNTable(daftarSBN);

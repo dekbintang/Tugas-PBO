@@ -141,4 +141,5 @@ public class TableView {
         String pad = " ".repeat(Math.max(0, padding));
         return pad + text;
     }
+
 }
