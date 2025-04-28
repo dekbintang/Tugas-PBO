@@ -3,10 +3,15 @@ package src.model;
 public class SahamHolding {
     private Saham saham;
     private int quantity;
+    private String code;
 
-    public SahamHolding(Saham saham, int quantity) {
+    public SahamHolding(Saham saham, int quantity, String code) {
         this.saham = saham;
         this.quantity = quantity;
+        this.code = code;
+    }
+
+    public SahamHolding(Saham saham, int quantity) {
     }
 
     public Saham getSaham() {
@@ -15,6 +20,10 @@ public class SahamHolding {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public String getCode() {
+        return code;
     }
 
     public void addQuantity(int amount) {

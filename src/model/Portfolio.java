@@ -9,13 +9,19 @@ public class Portfolio {
     private List<SuratBerhargaNegaraHolding> suratBerhargaNegaraHoldings = new ArrayList<>();
 
     public void buySaham(Saham saham, int quantity) {
-        SahamHolding existing = findSahamHolding(saham);
-        if (existing != null) {
-            existing.addQuantity(quantity);
-        } else {
-            sahamHoldings.add(new SahamHolding(saham, quantity));
+        // Cek apakah sudah punya saham dengan kode itu
+        for (SahamHolding holding : sahamHoldings) {
+            if (holding.getSaham().getCode().equalsIgnoreCase(saham.getCode())) {
+                // Kalau sudah punya, tambah quantity saja
+                holding.addQuantity(quantity);
+                return;
+            }
         }
+        // Kalau belum punya, buat SahamHolding baru
+        SahamHolding newHolding = new SahamHolding(saham, quantity, saham.getCode());
+        sahamHoldings.add(newHolding);
     }
+
 
     public boolean sellSaham(Saham saham, int quantity) {
         SahamHolding existing = findSahamHolding(saham);

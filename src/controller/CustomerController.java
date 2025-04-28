@@ -166,7 +166,7 @@ public class CustomerController {
         }
 
 // Kalau ketemu, lanjut input jumlah
-        double jumlah = InputUtil.inputDouble("Jumlah pembelian (Rp): ");
+        double jumlah = InputUtil.inputDouble("Jumlah pembelian Kuota (Rp): ");
 
 // Validasi jumlah
         if (jumlah <= 0) {

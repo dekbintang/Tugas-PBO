@@ -143,10 +143,10 @@ public class AdminController {
         ScreenUtil.clearScreen();
         TableView.displayHeaderSBN();
         String nama = InputUtil.inputString("Nama SBN: ");
-        double bunga = InputUtil.inputDouble("Bunga SBN: ");
+        double bunga = InputUtil.inputDouble("Bunga SBN (%): ");
         int jangkaWaktu = InputUtil.inputInt("Jangka Waktu (bulan): ");
-        String jatuhTempo = InputUtil.inputString("Tanggal Jatuh Tempo (format: dd-MM-yyyy): ");
-        double kuota = InputUtil.inputDouble("Kuota SBN: ");
+        String jatuhTempo = InputUtil.inputString("Tanggal Jatuh Tempo (format: DD-MM-YYYY): ");
+        double kuota = InputUtil.inputDouble("Kuota SBN yang tersedia: ");
 
         SuratBerhargaNegara sbnBaru = new SuratBerhargaNegara(nama, bunga, jangkaWaktu, jatuhTempo, kuota);
         daftarSBN.add(sbnBaru);

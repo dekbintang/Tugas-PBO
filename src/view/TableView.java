@@ -26,7 +26,6 @@ public class TableView {
         System.out.println("||   [2] Kelola Surat Berharga Negara (SBN)                        ||");
         System.out.println("||   [3] Logout                                                    ||");
         System.out.println("=====================================================================");
-        System.out.print("Pilih: ");
     }
 
     // Submenu Admin Saham
@@ -39,7 +38,6 @@ public class TableView {
         System.out.println("||   [3] Lihat Daftar Saham                                        ||");
         System.out.println("||   [4] Kembali ke Admin Menu                                     ||");
         System.out.println("=====================================================================");
-        System.out.print("Pilih: ");
     }
 
     public static void displayLogin() {
@@ -97,7 +95,7 @@ public class TableView {
 
     public static void displayLoginSuccess(String username) {
         System.out.println("=====================================================================");
-        System.out.printf("||    Login sebagai %s berhasil.                                    ||%n", username);
+        System.out.printf("||               Login sebagai %s berhasil.                  ||%n", username);
         System.out.println("=====================================================================");
     }
 
@@ -139,7 +137,7 @@ public class TableView {
         System.out.println("==================================================================================================================");
         System.out.println("||                                        Beli Surat Berharga Negara (SBN)                                      ||");
         System.out.println("==================================================================================================================");
-        System.out.printf("| %-5s | %-25s | %-10s | %-10s | %-15s | %-15s |\n", "No", "Nama", "Bunga (%)", "Jangka (bulan)", "Jatuh Tempo", "Kuota (Rp)");
+        System.out.printf("| %-5s | %-25s | %-10s | %-10s | %-15s | %-15s |\n", "No", "Nama", "Bunga (%)", "Jangka (bulan)", "Jatuh Tempo", "Kuota Tersedia (Rp)");
         System.out.println("------------------------------------------------------------------------------------------------------------------");
         int no = 1;
         for (SuratBerhargaNegara sbn : daftarSBN) {
@@ -167,15 +165,16 @@ public class TableView {
     // Tabel untuk portfolio saham
     public static void displayPortfolioSahamTable(List<SahamHolding> holdings) {
         System.out.println("=====================================================================");
-        System.out.printf("| %-5s | %-20s | %-10s | %-10s |\n", "No", "Nama Perusahaan", "Jumlah", "Harga");
+        System.out.printf("| %-5s | %-10s | %-20s | %-10s | %-10s |\n", "No", "Kode", "Nama Perusahaan", "Lembar", "Harga");
         System.out.println("---------------------------------------------------------------------");
         int no = 1;
         for (SahamHolding holding : holdings) {
-            System.out.printf("| %-5d | %-20s | %-10d | Rp%-9.2f |\n",
-                    no++, holding.getSaham().getCompanyName(), holding.getQuantity(), holding.getSaham().getPrice());
+            System.out.printf("| %-5d | %-10s | %-20s | %-10d | Rp%-9.2f |\n",
+                    no++, holding.getCode(), holding.getSaham().getCompanyName(), holding.getQuantity(), holding.getSaham().getPrice());
         }
         System.out.println("=====================================================================");
     }
+
 
     // Tabel untuk portfolio SBN
     public static void displayPortfolioSBNTable(List<SuratBerhargaNegaraHolding> holdings) {
@@ -199,13 +198,6 @@ public class TableView {
         System.out.printf("Nominal Investasi\t : Rp%.2f%n", nominal);
         System.out.printf("Estimasi Kupon per Bulan: Rp%.2f%n", kuponPerBulan);
         System.out.println("=====================================================================");
-    }
-
-    // Utility untuk center text
-    private static String centerText(String text, int width) {
-        int padding = (width - text.length()) / 2;
-        String pad = " ".repeat(Math.max(0, padding));
-        return pad + text;
     }
 
     // Menampilkan pesan untuk keberhasilan penambahan saham

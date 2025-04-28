@@ -11,6 +11,10 @@ import java.util.Scanner;
 public class AuthController {
     private final Scanner scanner = new Scanner(System.in);
 
+    // Simpan user supaya tidak reset
+    private final Admin admin = new Admin("admin", "111");
+    private final Customer customer = new Customer("customer", "222");
+
     public BaseUser login() {
         ScreenUtil.clearScreen();
         TableView.displayLogin();
@@ -19,19 +23,19 @@ public class AuthController {
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
-        // Dummy authentication logic
-        if (username.equals("admin") && password.equals("111")) {
-            TableView.displayLoginSuccess( username);
+        // Pencocokan username dan password
+        if (username.equals(admin.getUsername()) && password.equals(admin.getPassword())) {
+            TableView.displayLoginSuccess(username);
             pause();
-            return new Admin(username, password);  // Mengembalikan objek Admin
-        } else if (username.equals("customer") && password.equals("222")) {
-            TableView.displayLoginSuccess( username);
+            return admin; // <-- Return admin YANG SAMA
+        } else if (username.equals(customer.getUsername()) && password.equals(customer.getPassword())) {
+            TableView.displayLoginSuccess(username);
             pause();
-            return new Customer(username, password);  // Mengembalikan objek Customer
+            return customer; // <-- Return customer YANG SAMA
         } else {
             TableView.displayLoginFailed();
             pause();
-            return null;  // Login gagal
+            return null;
         }
     }
 
