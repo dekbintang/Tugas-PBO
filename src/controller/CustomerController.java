@@ -144,17 +144,13 @@ public class CustomerController {
 
     private static void beliSuratBerhargaNegara(Portfolio portfolio) {
         ScreenUtil.clearScreen();
-        TableView.displaySectionHeader("Beli Surat Berharga Negara");
-
         if (daftarSBN.isEmpty()) {
             System.out.println("Tidak ada SBN tersedia.");
             InputUtil.waitEnter();
             return;
         }
 
-        TableView.displaySectionHeader("Daftar SBN");
-        TableView.displaySBNMenu();
-
+        TableView.displaybuySBN(daftarSBN);
 
         // Tanya nama SBN yang ingin dibeli
         String namaSBN = InputUtil.inputString("Nama Surat Berharga Negara yang ingin dibeli: ");

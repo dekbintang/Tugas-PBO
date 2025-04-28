@@ -85,7 +85,7 @@ public class AdminController {
 
     private static void addSaham() {
         ScreenUtil.clearScreen();
-        TableView.displayHeader("Tambah Saham Baru");
+        TableView.displayHeaderSaham();
         String kode = InputUtil.inputString("Kode Saham: ");
         String namaPerusahaan = InputUtil.inputString("Nama Perusahaan: ");
         double harga = InputUtil.inputDouble("Harga Saham: ");
@@ -94,14 +94,13 @@ public class AdminController {
         Saham sahamBaru = new Saham(kode, namaPerusahaan, harga, kuantitas);
         daftarSaham.add(sahamBaru);
 
-        TableView.displayMessage(String.valueOf(sahamBaru));
+        TableView.displayInformation(sahamBaru);
         InputUtil.waitEnter();
     }
 
     // Metode untuk mengubah harga saham
     private static void modifySahamPrice() {
         ScreenUtil.clearScreen();
-        TableView.displayHeader("Ubah Harga Saham");
         if (daftarSaham.isEmpty()) {
             TableView.displayMessage("Tidak ada saham yang tersedia.");
             InputUtil.waitEnter();
@@ -134,7 +133,6 @@ public class AdminController {
         if (daftarSaham.isEmpty()) {
             TableView.displayMessage("Tidak ada saham yang tersedia.");
         } else {
-            TableView.displayHeader("Daftar Saham");
             TableView.displaySahamTable(daftarSaham);
         }
         InputUtil.waitEnter();
@@ -143,7 +141,7 @@ public class AdminController {
     // Menambah SBN ke daftar
     private static void addSBN() {
         ScreenUtil.clearScreen();
-        TableView.displayHeader("Tambah Surat Berharga Negara (SBN)");
+        TableView.displayHeaderSBN();
         String nama = InputUtil.inputString("Nama SBN: ");
         double bunga = InputUtil.inputDouble("Bunga SBN: ");
         int jangkaWaktu = InputUtil.inputInt("Jangka Waktu (bulan): ");
@@ -153,7 +151,7 @@ public class AdminController {
         SuratBerhargaNegara sbnBaru = new SuratBerhargaNegara(nama, bunga, jangkaWaktu, jatuhTempo, kuota);
         daftarSBN.add(sbnBaru);
 
-        TableView.displayMessage("SBN berhasil ditambahkan: " + sbnBaru);
+        TableView.displayMessageAddsbn("SBN berhasil ditambahkan: " + sbnBaru);
         InputUtil.waitEnter();
     }
 
@@ -163,7 +161,6 @@ public class AdminController {
         if (daftarSBN.isEmpty()) {
             TableView.displayMessage("Tidak ada SBN yang tersedia.");
         } else {
-            TableView.displayHeader("Daftar Surat Berharga Negara (SBN)");
             TableView.displaySBNTable(daftarSBN);
         }
         InputUtil.waitEnter();

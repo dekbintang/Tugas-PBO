@@ -11,7 +11,7 @@ public class TableView {
 
     public static void displayMainMenu() {
         System.out.println("=====================================================================");
-        System.out.println("||                          MENU UTAMA                           ||");
+        System.out.println("||                          MENU UTAMA                             ||");
         System.out.println("=====================================================================");
         System.out.println("|| 1. Login                                                        ||");
         System.out.println("|| 2. Keluar                                                       ||");
@@ -22,9 +22,9 @@ public class TableView {
         System.out.println("=====================================================================");
         System.out.println("||                            Admin Menu                           ||");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("||   [1] Kelola Saham                                               ||");
-        System.out.println("||   [2] Kelola Surat Berharga Negara (SBN)                         ||");
-        System.out.println("||   [3] Logout                                                     ||");
+        System.out.println("||   [1] Kelola Saham                                              ||");
+        System.out.println("||   [2] Kelola Surat Berharga Negara (SBN)                        ||");
+        System.out.println("||   [3] Logout                                                    ||");
         System.out.println("=====================================================================");
         System.out.print("Pilih: ");
     }
@@ -34,17 +34,17 @@ public class TableView {
         System.out.println("=====================================================================");
         System.out.println("||                         Saham Menu Admin                        ||");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("||   [1] Tambah Saham Baru                                          ||");
-        System.out.println("||   [2] Ubah Harga Saham                                           ||");
-        System.out.println("||   [3] Lihat Daftar Saham                                         ||");
-        System.out.println("||   [4] Kembali ke Admin Menu                                      ||");
+        System.out.println("||   [1] Tambah Saham Baru                                         ||");
+        System.out.println("||   [2] Ubah Harga Saham                                          ||");
+        System.out.println("||   [3] Lihat Daftar Saham                                        ||");
+        System.out.println("||   [4] Kembali ke Admin Menu                                     ||");
         System.out.println("=====================================================================");
         System.out.print("Pilih: ");
     }
 
     public static void displayLogin() {
         System.out.println("=====================================================================");
-        System.out.println("||                          Login Menu                            ||");
+        System.out.println("||                          Login Menu                             ||");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("||   Masukkan Username dan Password untuk Login.                   ||");
         System.out.println("=====================================================================");
@@ -52,14 +52,13 @@ public class TableView {
 
     // Submenu Admin SBN
     public static void displaySBNMenu() {
-        System.out.println("=====================================================================");
-        System.out.println("||                      Surat Berharga Negara Menu                 ||");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("======================================================================");
+        System.out.println("||                      Surat Berharga Negara Menu                  ||");
+        System.out.println("----------------------------------------------------------------------");
         System.out.println("||   [1] Tambah Surat Berharga Negara Baru                          ||");
         System.out.println("||   [2] Lihat Daftar SBN                                           ||");
         System.out.println("||   [3] Kembali ke Admin Menu                                      ||");
-        System.out.println("=====================================================================");
-        System.out.print("Pilih: ");
+        System.out.println("======================================================================");
     }
 
     // Menu Customer Utama
@@ -67,19 +66,18 @@ public class TableView {
         System.out.println("=====================================================================");
         System.out.println("||                          Customer Menu                          ||");
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("||   [1] Lihat Portofolio                                           ||");
-        System.out.println("||   [2] Beli Saham                                                 ||");
-        System.out.println("||   [3] Jual Saham                                                 ||");
-        System.out.println("||   [4] Beli Surat Berharga Negara (SBN)                           ||");
-        System.out.println("||   [5] Simulasi Kupon SBN                                         ||");
-        System.out.println("||   [6] Logout                                                     ||");
+        System.out.println("||   [1] Lihat Portofolio                                          ||");
+        System.out.println("||   [2] Beli Saham                                                ||");
+        System.out.println("||   [3] Jual Saham                                                ||");
+        System.out.println("||   [4] Beli Surat Berharga Negara (SBN)                          ||");
+        System.out.println("||   [5] Simulasi Kupon SBN                                        ||");
+        System.out.println("||   [6] Logout                                                    ||");
         System.out.println("=====================================================================");
-        System.out.print("Pilih: ");
     }
 
     public static void displayLoginFailed() {
         System.out.println("=====================================================================");
-        System.out.println("||                        Login Gagal                             ||");
+        System.out.println("||                        Login Gagal                              ||");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("|| Username atau password yang Anda masukkan salah.                ||");
         System.out.println("=====================================================================");
@@ -87,26 +85,32 @@ public class TableView {
 
     public static void displayExitMessage() {
         System.out.println("=====================================================================");
-        System.out.println("|| Terima kasih telah menggunakan aplikasi. Sampai jumpa!         ||");
+        System.out.println("|| Terima kasih telah menggunakan aplikasi. Sampai jumpa!          ||");
         System.out.println("=====================================================================");
     }
 
     public static void displayInvalidChoice() {
         System.out.println("=====================================================================");
-        System.out.println("|| Pilihan tidak valid, silakan coba lagi!                        ||");
+        System.out.println("|| Pilihan tidak valid, silakan coba lagi!                         ||");
         System.out.println("=====================================================================");
     }
 
     public static void displayLoginSuccess(String username) {
         System.out.println("=====================================================================");
-        System.out.printf("||    Login sebagai %s berhasil.                                   ||%n", username);
+        System.out.printf("||    Login sebagai %s berhasil.                                    ||%n", username);
         System.out.println("=====================================================================");
     }
 
     // Header Section
-    public static void displayHeader(String title) {
+    public static void displayHeaderSBN() {
         System.out.println("=====================================================================");
-        System.out.printf("||%-67s||%n", centerText(title, 67));
+        System.out.println("||             Tambah Surat Berharga Negara (SBN)                  ||");
+        System.out.println("=====================================================================");
+    }
+
+    public static void displayHeaderSaham() {
+        System.out.println("=====================================================================");
+        System.out.println("||                          Tambah Saham                           ||");
         System.out.println("=====================================================================");
     }
 
@@ -117,18 +121,38 @@ public class TableView {
     // Tabel untuk daftar saham
     public static void displaySahamTable(List<Saham> daftarSaham) {
         System.out.println("=====================================================================");
-        System.out.printf("| %-5s | %-20s | %-15s | %-10s |\n", "No", "Kode", "Nama Perusahaan", "Harga");
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("||                        Daftar Saham                             ||");
+        System.out.println("=====================================================================");
+        System.out.printf("| %-5s | %-10s | %-20s | %-10s | %-8s |\n", "No", "Kode", "Nama Perusahaan", "Harga", "Jumlah");
+        System.out.println("=====================================================================");
+
         int no = 1;
         for (Saham saham : daftarSaham) {
-            System.out.printf("| %-5d | %-20s | %-15s | Rp%-9.2f |\n",
-                    no++, saham.getCode(), saham.getCompanyName(), saham.getPrice());
+            System.out.printf("| %-5d | %-10s | %-20s | Rp%-9.2f | %-7d |\n",
+                    no++, saham.getCode(), saham.getCompanyName(), saham.getPrice(), saham.getQuantity());
         }
+
         System.out.println("=====================================================================");
+    }
+
+    public static void displaybuySBN(List<SuratBerhargaNegara> daftarSBN) {
+        System.out.println("==================================================================================================================");
+        System.out.println("||                                        Beli Surat Berharga Negara (SBN)                                      ||");
+        System.out.println("==================================================================================================================");
+        System.out.printf("| %-5s | %-25s | %-10s | %-10s | %-15s | %-15s |\n", "No", "Nama", "Bunga (%)", "Jangka (bulan)", "Jatuh Tempo", "Kuota (Rp)");
+        System.out.println("------------------------------------------------------------------------------------------------------------------");
+        int no = 1;
+        for (SuratBerhargaNegara sbn : daftarSBN) {
+            System.out.printf("| %-5d | %-25s | %-10.2f | %-14d | %-15s | %-15.2f |\n",
+                    no++, sbn.getName(), sbn.getInterestRate(), sbn.getDurationMonths(), sbn.getMaturityDate(), sbn.getQuota());
+        }
+        System.out.println("==================================================================================================================");
     }
 
     // Tabel untuk daftar SBN
     public static void displaySBNTable(List<SuratBerhargaNegara> daftarSBN) {
+        System.out.println("==================================================================================================================");
+        System.out.println("||                                       Daftar Surat Berharga Negara (SBN)                                     ||");
         System.out.println("==================================================================================================================");
         System.out.printf("| %-5s | %-25s | %-10s | %-10s | %-15s | %-15s |\n", "No", "Nama", "Bunga (%)", "Jangka (bulan)", "Jatuh Tempo", "Kuota (Rp)");
         System.out.println("------------------------------------------------------------------------------------------------------------------");
@@ -169,11 +193,11 @@ public class TableView {
     // Tampilan hasil simulasi kupon
     public static void displayKuponSimulation(double bunga, double nominal, double kuponPerBulan) {
         System.out.println("=====================================================================");
-        System.out.println("||                        Hasil Simulasi Kupon SBN                 ||");
+        System.out.println("||                      Hasil Simulasi Kupon SBN                   ||");
         System.out.println("=====================================================================");
-        System.out.printf("Bunga Tahunan  : %.2f%%%n", bunga);
-        System.out.printf("Nominal Investasi : Rp%.2f%n", nominal);
-        System.out.printf("Estimasi Kupon per Bulan (setelah pajak): Rp%.2f%n", kuponPerBulan);
+        System.out.printf("Bunga Tahunan\t: %.2f%%%n", bunga);
+        System.out.printf("Nominal Investasi\t : Rp%.2f%n", nominal);
+        System.out.printf("Estimasi Kupon per Bulan: Rp%.2f%n", kuponPerBulan);
         System.out.println("=====================================================================");
     }
 
@@ -191,6 +215,12 @@ public class TableView {
         System.out.println("=====================================================================");
     }
 
+    public static void displayMessageAddsbn(String message) {
+        System.out.println("================================================================================================================");
+        System.out.println(message);
+        System.out.println("================================================================================================================");
+    }
+
     public static void displayStockNotFound() {
         System.out.println("=====================================================================");
         System.out.println("||                Saham tidak ditemukan di portofolio Anda.       ||");
@@ -205,19 +235,36 @@ public class TableView {
 
     public static void displayNoStocksMessage() {
         System.out.println("=====================================================================");
-        System.out.println("||                   Anda belum memiliki saham.                   ||");
+        System.out.println("||                   Anda belum memiliki saham.                    ||");
         System.out.println("=====================================================================");
     }
 
     public static void displayNoBondsMessage() {
         System.out.println("=====================================================================");
-        System.out.println("||                   Anda belum memiliki SBN.                    ||");
+        System.out.println("||                   Anda belum memiliki SBN.                       ||");
         System.out.println("=====================================================================");
     }
 
     public static void displayPortfolioTitle() {
         System.out.println("=====================================================================");
-        System.out.println("===                     Portofolio Anda                        ===");
+        System.out.println("===                     Portofolio Anda                           ===");
         System.out.println("=====================================================================");
     }
+
+    public static void displayInformation(Saham sahamBaru) {
+        System.out.println("=======================================================================");
+
+        // Menampilkan header tabel
+        System.out.printf("| %-5s | %-10s | %-20s | %-10s | %-10s |\n", "No", "Kode Saham", "Nama Perusahaan", "Harga", "Jumlah");
+        System.out.println("-----------------------------------------------------------------------");
+
+        // Menampilkan informasi saham yang diberikan dalam format tabel
+        System.out.printf("| %-5d | %-10s | %-20s | %-10.2f | %-10d |\n", 1, sahamBaru.getCode(), sahamBaru.getCompanyName(), sahamBaru.getPrice(), sahamBaru.getQuantity());
+
+        System.out.println("=======================================================================");
+    }
+
+
+
+
 }
