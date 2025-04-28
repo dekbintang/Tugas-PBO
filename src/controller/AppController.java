@@ -5,7 +5,8 @@ import src.user.Admin;
 import src.user.Customer;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
-//import src.view.AppView;
+import src.view.TableView;
+//import src.view.TableView;
 
 public class AppController {
     public static void run() {
@@ -13,14 +14,14 @@ public class AppController {
 
         while (true) {
             ScreenUtil.clearScreen();
-            AppView.displayMainMenu();
+            TableView.displayMainMenu();
             int pilih = InputUtil.inputInt("Pilih: ");
 
             switch (pilih) {
                 case 1:
                     BaseUser user = auth.login();
                     if (user == null) {
-                        AppView.displayLoginFailed();
+                        TableView.displayLoginFailed();
                         InputUtil.waitEnter();
                         break;
                     }
@@ -31,10 +32,10 @@ public class AppController {
                     }
                     break;
                 case 2:
-                    AppView.displayExitMessage();
+                    TableView.displayExitMessage();
                     return;
                 default:
-                    AppView.displayInvalidChoice();
+                    TableView.displayInvalidChoice();
                     InputUtil.waitEnter();
             }
         }

@@ -3,13 +3,17 @@ package src.controller;
 import src.user.BaseUser;
 import src.user.Admin;
 import src.user.Customer;
+import src.util.ScreenUtil;
+import src.view.TableView;
+
 import java.util.Scanner;
 
 public class AuthController {
     private final Scanner scanner = new Scanner(System.in);
 
     public BaseUser login() {
-        System.out.println("=== Login ===");
+        ScreenUtil.clearScreen();
+        TableView.displayLogin();
         System.out.print("Username: ");
         String username = scanner.nextLine();
         System.out.print("Password: ");
@@ -17,15 +21,15 @@ public class AuthController {
 
         // Dummy authentication logic
         if (username.equals("admin") && password.equals("111")) {
-            System.out.println("Login sebagai Admin berhasil.");
+            TableView.displayLoginSuccess( username);
             pause();
             return new Admin(username, password);  // Mengembalikan objek Admin
         } else if (username.equals("customer") && password.equals("222")) {
-            System.out.println("Login sebagai Customer berhasil.");
+            TableView.displayLoginSuccess( username);
             pause();
             return new Customer(username, password);  // Mengembalikan objek Customer
         } else {
-            System.out.println("Login gagal. Username atau password salah.");
+            TableView.displayLoginFailed();
             pause();
             return null;  // Login gagal
         }

@@ -9,6 +9,14 @@ import java.util.List;
 
 public class TableView {
 
+    public static void displayMainMenu() {
+        System.out.println("=====================================================================");
+        System.out.println("||                          MENU UTAMA                           ||");
+        System.out.println("=====================================================================");
+        System.out.println("|| 1. Login                                                        ||");
+        System.out.println("|| 2. Keluar                                                       ||");
+        System.out.println("=====================================================================");
+    }
     // Menu Admin Utama
     public static void displayAdminMainMenu() {
         System.out.println("=====================================================================");
@@ -32,6 +40,14 @@ public class TableView {
         System.out.println("||   [4] Kembali ke Admin Menu                                      ||");
         System.out.println("=====================================================================");
         System.out.print("Pilih: ");
+    }
+
+    public static void displayLogin() {
+        System.out.println("=====================================================================");
+        System.out.println("||                          Login Menu                            ||");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("||   Masukkan Username dan Password untuk Login.                   ||");
+        System.out.println("=====================================================================");
     }
 
     // Submenu Admin SBN
@@ -59,6 +75,32 @@ public class TableView {
         System.out.println("||   [6] Logout                                                     ||");
         System.out.println("=====================================================================");
         System.out.print("Pilih: ");
+    }
+
+    public static void displayLoginFailed() {
+        System.out.println("=====================================================================");
+        System.out.println("||                        Login Gagal                             ||");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("|| Username atau password yang Anda masukkan salah.                ||");
+        System.out.println("=====================================================================");
+    }
+
+    public static void displayExitMessage() {
+        System.out.println("=====================================================================");
+        System.out.println("|| Terima kasih telah menggunakan aplikasi. Sampai jumpa!         ||");
+        System.out.println("=====================================================================");
+    }
+
+    public static void displayInvalidChoice() {
+        System.out.println("=====================================================================");
+        System.out.println("|| Pilihan tidak valid, silakan coba lagi!                        ||");
+        System.out.println("=====================================================================");
+    }
+
+    public static void displayLoginSuccess(String username) {
+        System.out.println("=====================================================================");
+        System.out.printf("||    Login sebagai %s berhasil.                                   ||%n", username);
+        System.out.println("=====================================================================");
     }
 
     // Header Section
@@ -141,5 +183,13 @@ public class TableView {
         String pad = " ".repeat(Math.max(0, padding));
         return pad + text;
     }
+
+    // Menampilkan pesan untuk keberhasilan penambahan saham
+    public static void displayMessage(String message) {
+        System.out.println("=====================================================================");
+        System.out.println(message);
+        System.out.println("=====================================================================");
+    }
+
 
 }

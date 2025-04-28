@@ -5,7 +5,7 @@ import src.model.SuratBerhargaNegara;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
 import src.view.TableView;
-//import src.view.AdminView;
+//import src.view.TableView;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class AdminController {
                 case 4:
                     return;
                 default:
-                    AdminView.displayMessage("Pilihan tidak valid.");
+                    TableView.displayMessage("Pilihan tidak valid.");
                     InputUtil.waitEnter();
             }
         }
@@ -78,7 +78,7 @@ public class AdminController {
                 case 3:
                     return;
                 default:
-                    AdminView.displayMessage("Pilihan tidak valid.");
+                    TableView.displayMessage("Pilihan tidak valid.");
                     InputUtil.waitEnter();
             }
         }
@@ -104,7 +104,7 @@ public class AdminController {
         ScreenUtil.clearScreen();
         TableView.displayHeader("Ubah Harga Saham");
         if (daftarSaham.isEmpty()) {
-            AdminView.displayMessage("Tidak ada saham yang tersedia.");
+            TableView.displayMessage("Tidak ada saham yang tersedia.");
             InputUtil.waitEnter();
             return;
         }
@@ -164,8 +164,8 @@ public class AdminController {
         if (daftarSBN.isEmpty()) {
             TableView.displayMessage("Tidak ada SBN yang tersedia.");
         } else {
-            AdminView.displayHeader("Daftar Surat Berharga Negara (SBN)");
-            AdminView.displaySBNTable(daftarSBN);
+            TableView.displayHeader("Daftar Surat Berharga Negara (SBN)");
+            TableView.displaySBNTable(daftarSBN);
         }
         InputUtil.waitEnter();
     }
