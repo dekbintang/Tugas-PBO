@@ -94,7 +94,7 @@ public class AdminController {
         Saham sahamBaru = new Saham(kode, namaPerusahaan, harga, kuantitas);
         daftarSaham.add(sahamBaru);
 
-        TableView.displayInformation(sahamBaru);
+        TableView.displayMessage(String.valueOf(sahamBaru));
         InputUtil.waitEnter();
     }
 

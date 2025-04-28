@@ -106,7 +106,7 @@ public class TableView {
     // Header Section
     public static void displayHeader(String title) {
         System.out.println("=====================================================================");
-        System.out.printf("||%-66s||%n", centerText(title, 67));
+        System.out.printf("||%-67s||%n", centerText(title, 67));
         System.out.println("=====================================================================");
     }
 
@@ -191,16 +191,33 @@ public class TableView {
         System.out.println("=====================================================================");
     }
 
-    public static void displayInformation(Saham sahamBaru) {
-        System.out.println("===========================================================");
-        System.out.printf("| %-5s | %-20s | %-10s | %-10s |\n", "kode", "Nama Perusahaan", "lembar", "Harga");
-        System.out.println("-----------------------------------------------------------");
-
-        // Menampilkan informasi saham yang diberikan dalam format tabel
-        System.out.printf("| %-5s | %-20s | %-10d | %-10.2f |\n", 1, sahamBaru.getCompanyName(), sahamBaru.getQuantity(), sahamBaru.getPrice());
-
-        System.out.println("===========================================================");
+    public static void displayStockNotFound() {
+        System.out.println("=====================================================================");
+        System.out.println("||                Saham tidak ditemukan di portofolio Anda.       ||");
+        System.out.println("=====================================================================");
     }
 
+    public static void displayStockNotFoundMessage() {
+        System.out.println("=====================================================================");
+        System.out.println("||                        Saham tidak ditemukan.                   ||");
+        System.out.println("=====================================================================");
+    }
 
+    public static void displayNoStocksMessage() {
+        System.out.println("=====================================================================");
+        System.out.println("||                   Anda belum memiliki saham.                   ||");
+        System.out.println("=====================================================================");
+    }
+
+    public static void displayNoBondsMessage() {
+        System.out.println("=====================================================================");
+        System.out.println("||                   Anda belum memiliki SBN.                    ||");
+        System.out.println("=====================================================================");
+    }
+
+    public static void displayPortfolioTitle() {
+        System.out.println("=====================================================================");
+        System.out.println("===                     Portofolio Anda                        ===");
+        System.out.println("=====================================================================");
+    }
 }

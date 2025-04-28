@@ -43,18 +43,18 @@ public class CustomerController {
 
     private static void lihatPortofolio(Portfolio portfolio) {
         ScreenUtil.clearScreen();
-        System.out.println("=== Portofolio Anda ===");
+        TableView.displayPortfolioTitle();
 
         System.out.println("\nSaham yang dimiliki:");
         if (portfolio.getSahamHoldings().isEmpty()) {
-            System.out.println("Anda belum memiliki saham.");
+                TableView.displayNoStocksMessage();
         } else {
             TableView.displayPortfolioSahamTable(portfolio.getSahamHoldings());
         }
 
         System.out.println("\nSurat Berharga Negara yang dimiliki:");
         if (portfolio.getSuratBerhargaNegaraHoldings().isEmpty()) {
-            System.out.println("Anda belum memiliki SBN.");
+            TableView.displayNoBondsMessage();
         } else {
             TableView.displayPortfolioSBNTable(portfolio.getSuratBerhargaNegaraHoldings());
         }
@@ -78,7 +78,7 @@ public class CustomerController {
         String code = InputUtil.inputString("Kode saham yang ingin dibeli: ");
         Saham saham = findSahamByCode(code);
         if (saham == null) {
-            System.out.println("Saham tidak ditemukan.");
+            TableView.displayStockNotFoundMessage();
             InputUtil.waitEnter();
             return;
         }
@@ -120,7 +120,7 @@ public class CustomerController {
         }
 
         if (selectedHolding == null) {
-            System.out.println("Saham tidak ditemukan di portofolio Anda.");
+            TableView.displayStockNotFound();
             InputUtil.waitEnter();
             return;
         }
