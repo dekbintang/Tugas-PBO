@@ -6,7 +6,7 @@ public class Saham {
     private double price;
     private int quantity;
 
-    public Saham(String code, String companyName, double price) {
+    public Saham(String code, String companyName, double price, int quantity) {
         this.code = code;
         this.companyName = companyName;
         this.price = price;

@@ -38,20 +38,6 @@ public class Portfolio {
             suratBerhargaNegaraHoldings.add(new SuratBerhargaNegaraHolding(suratBerhargaNegara, amount));
         }
     }
-
-    public boolean sellSuratBerhargaNegara(SuratBerhargaNegara suratBerhargaNegara, double amount) {
-        SuratBerhargaNegaraHolding existing = findSuratBerhargaNegaraHolding(suratBerhargaNegara);
-        if (existing == null || existing.getAmount() < amount) {
-            return false;
-        }
-        if (existing.getAmount() == amount) {
-            suratBerhargaNegaraHoldings.remove(existing);
-        } else {
-            existing.subtractAmount(amount);
-        }
-        return true;
-    }
-
     public List<SahamHolding> getSahamHoldings() {
         return sahamHoldings;
     }

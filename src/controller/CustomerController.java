@@ -82,7 +82,17 @@ public class CustomerController {
             return;
         }
         int quantity = InputUtil.inputInt("Jumlah lembar yang ingin dibeli: ");
+
+        if (quantity > saham.getQuantity()) {
+            System.out.println("Jumlah lembar yang diminta melebihi stok tersedia (" + saham.getQuantity() + " lembar).");
+            InputUtil.waitEnter();
+            return;
+        }
+
         portfolio.buySaham(saham, quantity);
+
+        saham.setQuantity(saham.getQuantity() - quantity);
+
         System.out.println("Saham " + saham.getCompanyName() + " berhasil dibeli sebanyak " + quantity + " lembar.");
         InputUtil.waitEnter();
     }

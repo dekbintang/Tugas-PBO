@@ -89,8 +89,9 @@ public class AdminController {
         String kode = InputUtil.inputString("Kode Saham: ");
         String namaPerusahaan = InputUtil.inputString("Nama Perusahaan: ");
         double harga = InputUtil.inputDouble("Harga Saham: ");
+        int kuantitas = InputUtil.inputInt("Jumlah Lembar Saham: ");
 
-        Saham sahamBaru = new Saham(kode, namaPerusahaan, harga);
+        Saham sahamBaru = new Saham(kode, namaPerusahaan, harga, kuantitas);
         daftarSaham.add(sahamBaru);
 
         AdminView.displayMessage("Saham berhasil ditambahkan: " + sahamBaru);
