@@ -4,7 +4,8 @@ import src.model.*;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
 import src.user.Customer;
-import src.view.CustomerView;
+import src.view.TableView;
+//import src.view.CustomerView;
 
 import static src.controller.AdminController.*;
 
@@ -13,7 +14,7 @@ public class CustomerController {
     public static void menu(Customer customer) {
         while (true) {
             ScreenUtil.clearScreen();
-            CustomerView.displayCustomerMenu();
+            TableView.displayCustomerMenu();
             int pilih = InputUtil.inputInt("Pilih: ");
             switch (pilih) {
                 case 1:

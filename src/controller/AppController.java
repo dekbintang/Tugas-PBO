@@ -5,7 +5,7 @@ import src.user.Admin;
 import src.user.Customer;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
-import src.view.AppView;
+//import src.view.AppView;
 
 public class AppController {
     public static void run() {
