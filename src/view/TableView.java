@@ -119,7 +119,7 @@ public class TableView {
         int no = 1;
         for (SuratBerhargaNegaraHolding holding : holdings) {
             System.out.printf("| %-5d | %-20s | Rp%-17.2f |\n",
-                    no++, holding.getSuratBerhargaNegara().getName(), holding.getInvestmentAmount());
+                    no++, holding.getSuratBerhargaNegara().getName(), holding.getAmount());
         }
         System.out.println("=====================================================================");
     }

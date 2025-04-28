@@ -4,7 +4,8 @@ import src.model.*;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
 import src.user.Customer;
-//import src.view.CustomerView;
+import src.view.TableView;
+//import src.view.TableView;
 
 import static src.controller.AdminController.*;
 
@@ -13,7 +14,7 @@ public class CustomerController {
     public static void menu(Customer customer) {
         while (true) {
             ScreenUtil.clearScreen();
-            CustomerView.displayCustomerMenu();
+            TableView.displayCustomerMenu();
             int pilih = InputUtil.inputInt("Pilih: ");
             switch (pilih) {
                 case 1:
@@ -48,14 +49,14 @@ public class CustomerController {
         if (portfolio.getSahamHoldings().isEmpty()) {
             System.out.println("Anda belum memiliki saham.");
         } else {
-            CustomerView.displayPortfolioSahamTable(portfolio.getSahamHoldings());
+            TableView.displayPortfolioSahamTable(portfolio.getSahamHoldings());
         }
 
         System.out.println("\nSurat Berharga Negara yang dimiliki:");
         if (portfolio.getSuratBerhargaNegaraHoldings().isEmpty()) {
             System.out.println("Anda belum memiliki SBN.");
         } else {
-            CustomerView.displayPortfolioSBNTable(portfolio.getSuratBerhargaNegaraHoldings());
+            TableView.displayPortfolioSBNTable(portfolio.getSuratBerhargaNegaraHoldings());
         }
 
         InputUtil.waitEnter();
@@ -71,8 +72,8 @@ public class CustomerController {
             return;
         }
 
-        CustomerView.displaySectionHeader("Daftar Saham");
-        CustomerView.displayAvailableSahamTable(daftarSaham);
+        TableView.displaySectionHeader("Daftar Saham");
+        TableView.displaySahamTable(daftarSaham);
 
         String code = InputUtil.inputString("Kode saham yang ingin dibeli: ");
         Saham saham = findSahamByCode(code);
@@ -106,8 +107,8 @@ public class CustomerController {
             return;
         }
 
-        CustomerView.displaySectionHeader("Saham yang Anda Miliki");
-        CustomerView.displayPortfolioSahamTable(portfolio.getSahamHoldings());
+        TableView.displaySectionHeader("Saham yang Anda Miliki");
+        TableView.displayPortfolioSahamTable(portfolio.getSahamHoldings());
 
         String code = InputUtil.inputString("Kode saham yang ingin dijual: ");
         SahamHolding selectedHolding = null;
@@ -143,7 +144,7 @@ public class CustomerController {
 
     private static void beliSuratBerhargaNegara(Portfolio portfolio) {
         ScreenUtil.clearScreen();
-        CustomerView.displaySectionHeader("Beli Surat Berharga Negara");
+        TableView.displaySectionHeader("Beli Surat Berharga Negara");
 
         if (daftarSBN.isEmpty()) {
             System.out.println("Tidak ada SBN tersedia.");
@@ -151,8 +152,8 @@ public class CustomerController {
             return;
         }
 
-        CustomerView.displaySectionHeader("Daftar SBN");
-        CustomerView.displayAvailableSBNTable(daftarSBN);
+        TableView.displaySectionHeader("Daftar SBN");
+        TableView.displaySBNMenu();
 
 
         // Tanya nama SBN yang ingin dibeli
@@ -196,15 +197,15 @@ public class CustomerController {
 
     private static void simulasiKuponSBN() {
         ScreenUtil.clearScreen();
-        CustomerView.displaySectionHeader("Simulasi Kupon SBN per Bulan");
+        TableView.displaySectionHeader("Simulasi Kupon SBN per Bulan");
 
         double bunga = InputUtil.inputDouble("Masukkan persentase bunga tahunan (%): ");
         double nominal = InputUtil.inputDouble("Masukkan nominal investasi (Rp): ");
 
         double kuponPerBulan = (bunga / 12.0 / 100.0) * 0.9 * nominal;
 
-        CustomerView.displaySectionHeader("Hasil Simulasi");
-        CustomerView.displayKuponSimulation(bunga, nominal, kuponPerBulan);
+        TableView.displaySectionHeader("Hasil Simulasi");
+        TableView.displayKuponSimulation(bunga, nominal, kuponPerBulan);
         InputUtil.waitEnter();
     }
 
