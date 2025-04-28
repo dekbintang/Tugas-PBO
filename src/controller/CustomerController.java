@@ -64,7 +64,6 @@ public class CustomerController {
 
     private static void beliSaham(Portfolio portfolio) {
         ScreenUtil.clearScreen();
-        System.out.println("=== Beli Saham ===");
 
         if (daftarSaham.isEmpty()) {
             System.out.println("Tidak ada saham tersedia.");
@@ -72,7 +71,6 @@ public class CustomerController {
             return;
         }
 
-        TableView.displaySectionHeader("Daftar Saham");
         TableView.displaySahamTable(daftarSaham);
 
         String code = InputUtil.inputString("Kode saham yang ingin dibeli: ");
