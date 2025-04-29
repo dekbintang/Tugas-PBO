@@ -43,7 +43,13 @@ public class SuratBerhargaNegara {
 
     @Override
     public String toString() {
-        return name + " | Bunga: " + interestRate + "% | Jangka: " + durationMonths + " bulan | Jatuh Tempo: " + maturityDate + " | Kuota: Rp " + quota;
+        return name + " | Bunga: " + interestRate + "% | Jangka: " + durationMonths + " bulan"
+                + " | Jatuh Tempo: " + maturityDate
+                + " | Kuota: " + formatRupiah(quota);
+    }
+
+    public String formatRupiah(double amount) {
+        return String.format("Rp %,.0f", amount).replace(',', '.');
     }
 
     @Override
