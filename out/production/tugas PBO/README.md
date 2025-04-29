@@ -1,6 +1,7 @@
-## Tugas 1 PBO - Pemrograman Berorientasi Objek
-## Pembuatan Program Investasi Sederhana Berbasis Command Line
-Hai! Ini adalah proyek kecil kami untuk memenuhi Tugas I PBO.
+# 📘 Pembuatan Program Investasi Sederhana Berbasis Command Line
+
+## 💻 Deskripsi Singkat
+> Hai! Ini adalah proyek kecil kami untuk memenuhi Tugas I PBO.
 
 Aplikasi Java ini dibuat untuk simulasi investasi sederhana dengan dua jenis pengguna:
 Admin bisa menambah, mengubah, dan menghapus produk investasi seperti saham dan SBN.
@@ -12,15 +13,40 @@ Program ini juga dilengkapi validasi input untuk memastikan data yang masuk sesu
 Detail alur program, deskripsi class, dan diagram UML tersedia di bawah.
 Kode lengkap sudah dilengkapi komentar untuk memudahkan pemahaman. Selamat mencoba! 🚀
 
-## Identitas Kami
+---
 
-**Nama**:
-- **I Kadek Bintang Adi Bimantara (2405551049)**
-- **Richard Christian Mozart Diazoni (2405551019)**
+## 🧑‍💻 Identitas Anggota
+| Nama                               | NIM           |
+|------------------------------------|---------------|
+| I Kadek Bintang Adi Bimantara      | 2405551049    |
+| Richard Christian Mozart Diazoni   | 2405551019    |
 
-## UML
+---
 
-## Penjelasan Program
+## 🚀 Fitur Utama
+- [x] Login Admin dan Customer
+- [x] Manajemen Saham (Tambah, Update Harga, Hapus)
+- [x] Manajemen Surat Berharga Negara (Tambah SBN)
+- [x] Investasi Saham dan SBN untuk Customer
+- [x] Simulasi Kupon SBN
+- [x] Portofolio Investasi
+- [x] Sistem berbasis memori (tanpa database/file)
+
+---
+
+## 🛠️ Bagaimana Program Dijalankan
+
+Program ini dijalankan dengan menerapkan konsep Object-Oriented Programming (OOP) secara menyeluruh dalam desain dan implementasinya. Program mengutamakan modularitas, pemisahan tanggung jawab antar class, serta penggunaan alur kontrol yang terstruktur agar lebih terorganisir dan mudah dikembangkan.
+
+Konsep yang Digunakan
+
+- ✅ Penggunaan Class dan Object
+- 🔄 Penggunaan Flow Control
+- 📦 Penggunaan ArrayList
+- 🧬 Penerapan Inheritance (Pewarisan)
+- 🔐 Penerapan Encapsulation (Enkapsulasi)
+
+## ⚙️Penjelasan Program
 Berikut adalah tampilan hasil penggunaan program pemesanan online, lengkap dengan beberapa screenshot. Penjelasan mengenai alur kerja kode dijabarkan setelah bagian ini.
 
 ## Menu Utama
@@ -55,10 +81,10 @@ Admin dapat menambahkan saham baru dengan mengisi informasi seperti kode saham, 
 Admin bisa memilih saham yang ingin diubah harganya, kemudian memasukkan harga baru. Setelah disimpan, perubahan akan langsung terlihat dalam daftar saham. Ini memungkinkan admin untuk menyesuaikan harga sesuai kondisi pasar terkini.
 
 ## Daftar Saham
-**Sebelum diubah:**
+*Sebelum diubah:*
 <img src="https://github.com/user-attachments/assets/1251de54-7314-4708-81e1-598ce327814f" width="100%" />
 
-**Setelah diubah:**
+*Setelah diubah:*
 <img src="https://github.com/user-attachments/assets/d922530b-36d8-4fc2-a818-3fe5b5276943" width="100%" />
 Gambar ini menunjukkan perbandingan daftar saham sebelum dan sesudah harga diubah. Ini menampilkan bagaimana sistem memperbarui data secara real-time setelah admin melakukan perubahan.
 
@@ -81,10 +107,10 @@ Menampilkan semua SBN yang telah dimasukkan oleh admin, termasuk informasi penti
 Pengguna yang memilih login sebagai customer akan diminta memasukkan username dan password mereka. Jika berhasil, sistem mengkonfirmasi login dan mengizinkan customer mengakses fitur-fitur seperti pembelian, penjualan, dan simulasi investasi.
 
 ## Lihat Portofolio
-**Sebelum menambah:**
+*Sebelum menambah:*
 <img src="https://github.com/user-attachments/assets/9c52341c-88bf-444f-8041-384d54494da8" width="100%" />
 
-**Setelah menambah:**  
+*Setelah menambah:*  
 <img src="https://github.com/user-attachments/assets/16445b40-4f3c-4a8f-b57c-e60586180f7f" width="100%" />
 Sebelum customer membeli saham atau SBN, sistem akan menampilkan pesan bahwa belum ada investasi. Setelah pembelian dilakukan, sistem menampilkan daftar saham dan/atau SBN yang dimiliki beserta jumlah dan nilainya.
 
@@ -108,17 +134,3 @@ Fitur ini memungkinkan customer menghitung estimasi kupon bulanan dan tahunan be
 ## Tampilan Keluar Program
 <img src="https://github.com/user-attachments/assets/059a0437-db59-4ebd-99b9-5f4d23ba8475" width="100%" />
 Pesan ini berfungsi sebagai ucapan terima kasih dan penanda akhir sesi, sehingga memberikan pengalaman penggunaan yang lebih ramah dan profesional. Hal ini penting untuk membangun kesan positif dan komunikasi yang baik antara aplikasi dan penggunanya.
-
-
-
-
-
-
-
-
-
-
-
-
-
-

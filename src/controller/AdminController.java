@@ -160,7 +160,6 @@ public class AdminController {
         InputUtil.waitEnter();
     }
 
-
     private static void addSBN() {
         ScreenUtil.clearScreen();
         TableView.displayHeaderSBN();

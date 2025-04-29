@@ -25,11 +25,11 @@ public class AuthController {
         if (username.equals(admin.getUsername()) && password.equals(admin.getPassword())) {
             TableView.displayLoginSuccess(username);
             pause();
-            return admin; // <-- Return admin YANG SAMA
+            return admin;
         } else if (username.equals(customer.getUsername()) && password.equals(customer.getPassword())) {
             TableView.displayLoginSuccess(username);
             pause();
-            return customer; // <-- Return customer YANG SAMA
+            return customer;
         } else {
             TableView.displayLoginFailed();
             pause();
