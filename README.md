@@ -24,8 +24,7 @@ Kode lengkap sudah dilengkapi komentar untuk memudahkan pemahaman. Selamat menco
 Berikut adalah tampilan hasil penggunaan program pemesanan online, lengkap dengan beberapa screenshot. Penjelasan mengenai alur kerja kode dijabarkan setelah bagian ini.
 
 ## Menu Utama
-![image](https://github.com/user-attachments/assets/377b8de8-b2de-4f2e-bd02-88789e244723)
+<img src="https://github.com/user-attachments/assets/377b8de8-b2de-4f2e-bd02-88789e244723" width="100%" />
 
 ## Login Admin & Customer
-![image](https://github.com/user-attachments/assets/ebf11aba-c68e-413e-86da-6faf2984698a)
-
+<img src="https://github.com/user-attachments/assets/ebf11aba-c68e-413e-86da-6faf2984698a" width="100%" />
