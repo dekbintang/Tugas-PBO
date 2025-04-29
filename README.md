@@ -101,6 +101,13 @@ Admin akan diminta mengisi data SBN seperti nama, tingkat bunga, jangka waktu, t
 <img src="https://github.com/user-attachments/assets/56920aa6-49f5-49b1-afca-a6902f26f715" width="100%" />
 Menampilkan semua SBN yang telah dimasukkan oleh admin, termasuk informasi penting seperti bunga, jangka waktu, dan kuota. Menu ini penting untuk mengevaluasi dan memverifikasi produk yang tersedia.
 
+## Hapus Saham dan Surat Berharga Negara (Admin)
+*Saham:*
+<img src="https://github.com/user-attachments/assets/6d6b5970-7ebc-4a78-ba97-7a89f04d0270" width="100%" />
+
+*Surat Berharga Negara:*
+<img src="https://github.com/user-attachments/assets/0382e12c-f87a-48bf-9162-f5a04663dc3f" width="100%" />
+
 ## Login Customer
 <img src="https://github.com/user-attachments/assets/883717cf-ccc1-4820-94e7-f30b4adc8176" width="100%" />
 <img src="https://github.com/user-attachments/assets/daac81c3-197a-4e6c-8ae2-225d83f978ad" width="100%" />
@@ -120,8 +127,12 @@ Sebelum customer membeli saham atau SBN, sistem akan menampilkan pesan bahwa bel
 Customer dapat memilih saham dari daftar dan menentukan jumlah lembar yang ingin dibeli. Sistem kemudian mengonfirmasi pembelian dengan menampilkan pesan bahwa transaksi berhasil.
 
 ## Jual Saham
+*Jika melebihi Lembar saham yang dimiliki:*
+<img src="https://github.com/user-attachments/assets/d503b3a6-247d-496d-8a9f-790b602558cb" width="100%" />
+
+*Jika Lembar yang dijual sesuai dengan yang dimiliki:*
 <img src="https://github.com/user-attachments/assets/8abc3276-670a-461d-9cb6-d49f39290ded" width="100%" />
-Pada fitur ini, customer memilih saham yang ingin dijual dan jumlahnya. Setelah dikonfirmasi, sistem akan menampilkan pesan bahwa saham berhasil dijual.
+Pada percobaan pertama, dilakukan penjualan lembar saham melebihi dari lembar yang dimiliki dan akan muncul pesan gagal seperti itu, lalu di gambar kedua customer memilih saham yang ingin dijual dan jumlahnya. Setelah dikonfirmasi, sistem akan menampilkan pesan bahwa saham berhasil dijual.
 
 ## Beli Surat Berharga Negara (SBN)
 <img src="https://github.com/user-attachments/assets/77f92dd6-dd0d-4257-a852-0315ec3dc128" width="100%" />
