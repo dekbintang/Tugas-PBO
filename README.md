@@ -124,7 +124,7 @@ Berikut adalah tampilan hasil penggunaan program pemesanan online, lengkap denga
 <img src="https://github.com/user-attachments/assets/b6447b20-eff3-4e15-b4b9-316fa99c8a42" width="100%" />
 
 *Setelah membeli:*  
-<img src="https://github.com/user-attachments/assets/2983e911-0b4f-47b0-b08a-b6aff8a6f5b4" width="100%" />
+<img src="https://github.com/user-attachments/assets/65b41abd-e070-4a09-a456-3c4f0c0c9dc6" width="100%" />
 <div align="justify">Sebelum customer membeli saham atau SBN, sistem akan menampilkan pesan bahwa belum ada investasi. Setelah pembelian dilakukan, sistem menampilkan daftar saham dan/atau SBN yang dimiliki beserta jumlah dan nilainya.</div>
 
 ## Beli Saham
