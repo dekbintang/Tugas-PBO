@@ -9,6 +9,8 @@ import src.view.TableView;
 import java.util.List;
 import java.util.ArrayList;
 
+import static src.view.TableView.formatRupiah;
+
 public class AdminController {
 
     // Daftar Saham yang dikelola admin
@@ -123,7 +125,7 @@ public class AdminController {
         double hargaBaru = InputUtil.inputDouble("Masukkan harga baru untuk " + sahamDipilih.getCompanyName() + ": ");
         sahamDipilih.setPrice(hargaBaru);
 
-        TableView.displayMessage("Harga saham " + sahamDipilih.getCompanyName() + " berhasil diubah menjadi: Rp " + hargaBaru);
+        TableView.displayMessage("Harga saham " + sahamDipilih.getCompanyName() + " berhasil diubah menjadi: " + formatRupiah(hargaBaru));
         InputUtil.waitEnter();
     }
 
