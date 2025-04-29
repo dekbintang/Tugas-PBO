@@ -36,10 +36,13 @@ public class Saham {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
     @Override
     public String toString() {
-        return code + " - " + companyName + " (Rp " + price + ")";
+        return code + " - " + companyName + " (" + formatRupiah(price) + ")";
+    }
+
+    private String formatRupiah(double amount) {
+        return String.format("Rp %,.0f", amount).replace(',', '.');
     }
 
     @Override
