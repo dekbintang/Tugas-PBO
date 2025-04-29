@@ -2,6 +2,7 @@ package src.controller;
 
 import src.model.Saham;
 import src.model.SuratBerhargaNegara;
+import src.user.Customer;
 import src.util.InputUtil;
 import src.util.ScreenUtil;
 import src.view.TableView;
@@ -156,6 +157,8 @@ public class AdminController {
         }
 
         Saham sahamDihapus = daftarSaham.remove(pilihSaham - 1);
+        AppController.getCustomer().getPortfolio().removeSahamIfExists(sahamDihapus);
+
         TableView.displayMessage("Saham " + sahamDihapus.getCompanyName() + " berhasil dihapus.");
         InputUtil.waitEnter();
     }
@@ -204,6 +207,10 @@ public class AdminController {
         }
 
         SuratBerhargaNegara sbnDihapus = daftarSBN.remove(pilihSBN - 1);
+
+        Customer customer = AppController.getCustomer();
+        customer.getPortfolio().removeSBNIfExists(sbnDihapus);
+
         TableView.displayMessage("SBN " + sbnDihapus.getName() + " berhasil dihapus.");
         InputUtil.waitEnter();
     }
