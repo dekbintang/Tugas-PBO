@@ -121,7 +121,7 @@ Berikut adalah tampilan hasil penggunaan program pemesanan online, lengkap denga
 
 ## Lihat Portofolio
 *Sebelum membeli:*
-<img src="https://github.com/user-attachments/assets/9c52341c-88bf-444f-8041-384d54494da8" width="100%" />
+<img src="https://github.com/user-attachments/assets/b6447b20-eff3-4e15-b4b9-316fa99c8a42" width="100%" />
 
 *Setelah membeli:*  
 <img src="https://github.com/user-attachments/assets/2983e911-0b4f-47b0-b08a-b6aff8a6f5b4" width="100%" />
