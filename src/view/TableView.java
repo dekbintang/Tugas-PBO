@@ -205,9 +205,9 @@ public class TableView {
     }
 
     public static void displayMessageAddsbn(String message) {
-        System.out.println("===================================================================================================================");
+        System.out.println("=======================================================================================================================");
         System.out.println(message);
-        System.out.println("===================================================================================================================");
+        System.out.println("=======================================================================================================================");
     }
 
     public static void displayStockNotFound() {
@@ -230,7 +230,7 @@ public class TableView {
 
     public static void displayNoBondsMessage() {
         System.out.println("=====================================================================");
-        System.out.println("||                   Anda belum memiliki SBN.                       ||");
+        System.out.println("||                   Anda belum memiliki SBN.                      ||");
         System.out.println("=====================================================================");
     }
 

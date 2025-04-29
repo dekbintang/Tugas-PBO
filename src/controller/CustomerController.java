@@ -182,7 +182,7 @@ public class CustomerController {
 
     private static void sbnCouponSimulation() {
         ScreenUtil.clearScreen();
-        TableView.displaySectionHeader("Simulasi Kupon SBN per Bulan");
+        TableView.displaySectionHeader("Simulasi Kupon SBN per Tahun");
 
         double bunga = InputUtil.inputDouble("Masukkan persentase bunga tahunan (%): ");
         double nominal = InputUtil.inputDouble("Masukkan nominal investasi (Rp): ");
