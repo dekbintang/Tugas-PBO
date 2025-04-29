@@ -35,7 +35,8 @@ public class TableView {
         System.out.println("||   [1] Tambah Saham Baru                                         ||");
         System.out.println("||   [2] Ubah Harga Saham                                          ||");
         System.out.println("||   [3] Lihat Daftar Saham                                        ||");
-        System.out.println("||   [4] Kembali ke Admin Menu                                     ||");
+        System.out.println("||   [4] Hapus Saham                                               ||");
+        System.out.println("||   [5] Kembali ke Admin Menu                                     ||");
         System.out.println("=====================================================================");
     }
 
@@ -53,7 +54,8 @@ public class TableView {
         System.out.println("----------------------------------------------------------------------");
         System.out.println("||   [1] Tambah Surat Berharga Negara Baru                          ||");
         System.out.println("||   [2] Lihat Daftar SBN                                           ||");
-        System.out.println("||   [3] Kembali ke Admin Menu                                      ||");
+        System.out.println("||   [3] Hapus SBN                                                  ||");
+        System.out.println("||   [4] Kembali ke Admin Menu                                      ||");
         System.out.println("======================================================================");
     }
 
