@@ -26,7 +26,7 @@ Kode lengkap sudah dilengkapi komentar untuk memudahkan pemahaman. Selamat menco
 ## 🚀 Fitur Utama
 - [x] Login Admin dan Customer
 - [x] Manajemen Saham (Tambah, Update Harga, Hapus)
-- [x] Manajemen Surat Berharga Negara (Tambah SBN)
+- [x] Manajemen Surat Berharga Negara (Tambah, dan Hapus SBN)
 - [x] Investasi Saham dan SBN untuk Customer
 - [x] Simulasi Kupon SBN
 - [x] Portofolio Investasi
