@@ -9,15 +9,12 @@ public class Portfolio {
     private List<SuratBerhargaNegaraHolding> suratBerhargaNegaraHoldings = new ArrayList<>();
 
     public void buySaham(Saham saham, int quantity) {
-        // Cek apakah sudah punya saham dengan kode itu
         for (SahamHolding holding : sahamHoldings) {
             if (holding.getSaham().getCode().equalsIgnoreCase(saham.getCode())) {
-                // Kalau sudah punya, tambah quantity saja
                 holding.addQuantity(quantity);
                 return;
             }
         }
-        // Kalau belum punya, buat SahamHolding baru
         SahamHolding newHolding = new SahamHolding(saham, quantity, saham.getCode());
         sahamHoldings.add(newHolding);
     }

@@ -148,23 +148,18 @@ public class CustomerController {
 
         TableView.displaybuySBN(daftarSBN);
 
-        // Tanya nama SBN yang ingin dibeli
         String namaSBN = InputUtil.inputString("Nama Surat Berharga Negara yang ingin dibeli: ");
 
-        // Cari SBN berdasarkan nama
         SuratBerhargaNegara sbnDipilih = findSBNByName(namaSBN);
 
-        // Cek apakah ketemu
         if (sbnDipilih == null) {
             System.out.println("SBN tidak ditemukan.");
             InputUtil.waitEnter();
             return;
         }
 
-        // Kalau ketemu, lanjut input jumlah
         double jumlah = InputUtil.inputDouble("Jumlah pembelian Kuota (Rp): ");
 
-        // Validasi jumlah
         if (jumlah <= 0) {
             System.out.println("Jumlah pembelian harus lebih dari 0.");
             InputUtil.waitEnter();
@@ -176,8 +171,6 @@ public class CustomerController {
             InputUtil.waitEnter();
             return;
         }
-
-        // Kalau lolos semua validasi, di sini bisa lanjut proses pembelian
 
         sbnDipilih.setQuota(sbnDipilih.getQuota() - jumlah);
         portfolio.buySuratBerhargaNegara(sbnDipilih, jumlah);
@@ -207,7 +200,7 @@ public class CustomerController {
                 return saham;
             }
         }
-        return null; // Tidak ditemukan
+        return null;
     }
 
     private static SuratBerhargaNegara findSBNByName(String name) {
@@ -216,6 +209,6 @@ public class CustomerController {
                 return sbn;
             }
         }
-        return null; // Tidak ditemukan
+        return null;
     }
 }

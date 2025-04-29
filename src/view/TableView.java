@@ -17,7 +17,7 @@ public class TableView {
         System.out.println("|| 2. Keluar                                                       ||");
         System.out.println("=====================================================================");
     }
-    // Menu Admin Utama
+
     public static void displayAdminMainMenu() {
         System.out.println("=====================================================================");
         System.out.println("||                            Admin Menu                           ||");
@@ -28,7 +28,6 @@ public class TableView {
         System.out.println("=====================================================================");
     }
 
-    // Submenu Admin Saham
     public static void displaySahamMenu() {
         System.out.println("=====================================================================");
         System.out.println("||                         Saham Menu Admin                        ||");
@@ -48,7 +47,6 @@ public class TableView {
         System.out.println("=====================================================================");
     }
 
-    // Submenu Admin SBN
     public static void displaySBNMenu() {
         System.out.println("======================================================================");
         System.out.println("||                      Surat Berharga Negara Menu                  ||");
@@ -59,7 +57,6 @@ public class TableView {
         System.out.println("======================================================================");
     }
 
-    // Menu Customer Utama
     public static void displayCustomerMenu() {
         System.out.println("=====================================================================");
         System.out.println("||                          Customer Menu                          ||");
@@ -99,7 +96,6 @@ public class TableView {
         System.out.println("=====================================================================");
     }
 
-    // Header Section
     public static void displayHeaderSBN() {
         System.out.println("=====================================================================");
         System.out.println("||             Tambah Surat Berharga Negara (SBN)                  ||");
@@ -116,7 +112,6 @@ public class TableView {
         System.out.println("\n---------------- " + title + " ----------------\n");
     }
 
-    // Tabel untuk daftar saham
     public static void displaySahamTable(List<Saham> daftarSaham) {
         System.out.println("=================================================================================");
         System.out.println("||                                 Daftar Saham                                ||");
@@ -126,7 +121,6 @@ public class TableView {
 
         int no = 1;
         for (Saham saham : daftarSaham) {
-            // Menampilkan harga dengan format Rupiah
             System.out.printf("| %-5d | %-10s | %-20s | %-20s | %-10d |\n",
                     no++, saham.getCode(), saham.getCompanyName(), formatRupiah(saham.getPrice()), saham.getQuantity());
         }
@@ -142,7 +136,6 @@ public class TableView {
         System.out.println("-----------------------------------------------------------------------------------------------------------------");
         int no = 1;
         for (SuratBerhargaNegara sbn : daftarSBN) {
-            // Menggunakan formatRupiah untuk menampilkan kuota dengan format Rp
             System.out.printf("| %-5d | %-25s | %-10.2f | %-14d | %-15s | %-25s |\n",
                     no++, sbn.getName(), sbn.getInterestRate(), sbn.getDurationMonths(), sbn.getMaturityDate(), formatRupiah(sbn.getQuota()));
         }
@@ -154,7 +147,6 @@ public class TableView {
         return String.format("Rp %,.0f", amount).replace(',', '.');
     }
 
-    // Tabel untuk daftar SBN
     public static void displaySBNTable(List<SuratBerhargaNegara> daftarSBN) {
         System.out.println("=================================================================================================================");
         System.out.println("||                                      Daftar Surat Berharga Negara (SBN)                                     ||");
@@ -170,7 +162,6 @@ public class TableView {
         System.out.println("=================================================================================================================");
     }
 
-    // Tabel untuk portfolio saham
     public static void displayPortfolioSahamTable(List<SahamHolding> holdings) {
         System.out.println("============================================================================");
         System.out.printf("| %-5s | %-10s | %-20s | %-10s | %-15s |\n", "No", "Kode", "Nama Perusahaan", "Lembar", "Harga");
@@ -185,34 +176,28 @@ public class TableView {
         System.out.println("============================================================================");
     }
 
-    // Tabel untuk portfolio SBN
     public static void displayPortfolioSBNTable(List<SuratBerhargaNegaraHolding> holdings) {
         System.out.println("========================================================");
         System.out.printf("| %-5s | %-20s | %-20s |\n", "No", "Nama SBN", "Jumlah Investasi (Rp)");
         System.out.println("--------------------------------------------------------");
         int no = 1;
         for (SuratBerhargaNegaraHolding holding : holdings) {
-            // Format jumlah investasi menjadi Rupiah
             String formattedAmount = formatRupiah(holding.getAmount());
             System.out.printf("| %-5d | %-20s | %-21s |\n", no++, holding.getSuratBerhargaNegara().getName(), formattedAmount);
         }
         System.out.println("========================================================");
     }
 
-    // Tampilan hasil simulasi kupon
     public static void displayKuponSimulation(double bunga, double nominal, double kuponPerBulan) {
         System.out.println("=====================================================================");
         System.out.println("||                      Hasil Simulasi Kupon SBN                   ||");
         System.out.println("=====================================================================");
         System.out.printf("Bunga Tahunan\t: %.2f%%%n", bunga);
-        // Menggunakan formatRupiah untuk menampilkan nominal dalam format Rp
         System.out.printf("Nominal Investasi\t : %s%n", formatRupiah(nominal));
-        // Menggunakan formatRupiah untuk menampilkan kupon per bulan dalam format Rp
         System.out.printf("Estimasi Kupon per Bulan: %s%n", formatRupiah(kuponPerBulan));
         System.out.println("=====================================================================");
     }
 
-    // Menampilkan pesan untuk keberhasilan penambahan saham
     public static void displayMessage(String message) {
         System.out.println("=====================================================================");
         System.out.println(message);
@@ -258,14 +243,11 @@ public class TableView {
     public static void displayInformation(Saham sahamBaru) {
         System.out.println("=================================================================================");
 
-        // Menampilkan header tabel
         System.out.printf("| %-5s | %-10s | %-20s | %-20s | %-10s |\n", "No", "Kode Saham", "Nama Perusahaan", "Harga", "Jumlah");
         System.out.println("---------------------------------------------------------------------------------");
 
-        // Format harga ke Rupiah
         String formattedPrice = formatRupiah(sahamBaru.getPrice());
 
-        // Menampilkan informasi saham
         System.out.printf("| %-5d | %-10s | %-20s | %-20s | %-10d |\n",
                 1, sahamBaru.getCode(), sahamBaru.getCompanyName(), formattedPrice, sahamBaru.getQuantity());
 

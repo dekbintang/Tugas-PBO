@@ -13,10 +13,8 @@ import static src.view.TableView.formatRupiah;
 
 public class AdminController {
 
-    // Daftar Saham yang dikelola admin
     static List<Saham> daftarSaham = new ArrayList<>();
 
-    // Daftar Surat Berharga Negara (SBN) yang dikelola admin
     static List<SuratBerhargaNegara> daftarSBN = new ArrayList<>();
 
     public static void menu() {
@@ -100,7 +98,6 @@ public class AdminController {
         InputUtil.waitEnter();
     }
 
-    // Metode untuk mengubah harga saham
     private static void modifySahamPrice() {
         ScreenUtil.clearScreen();
         if (daftarSaham.isEmpty()) {
@@ -109,10 +106,8 @@ public class AdminController {
             return;
         }
 
-        // Menampilkan daftar saham dalam bentuk tabel
         TableView.displaySahamTable(daftarSaham);
 
-        // Memilih saham yang akan diubah harga
         int pilihSaham = InputUtil.inputInt("Pilih saham yang ingin diubah harganya: ");
         if (pilihSaham < 1 || pilihSaham > daftarSaham.size()) {
             TableView.displayMessage("Pilihan tidak valid.");
@@ -120,7 +115,6 @@ public class AdminController {
             return;
         }
 
-        // Memasukkan harga baru
         Saham sahamDipilih = daftarSaham.get(pilihSaham - 1);
         double hargaBaru = InputUtil.inputDouble("Masukkan harga baru untuk " + sahamDipilih.getCompanyName() + ": ");
         sahamDipilih.setPrice(hargaBaru);
@@ -129,7 +123,6 @@ public class AdminController {
         InputUtil.waitEnter();
     }
 
-    // Menampilkan daftar saham
     private static void showSahamList() {
         ScreenUtil.clearScreen();
         if (daftarSaham.isEmpty()) {
@@ -140,7 +133,6 @@ public class AdminController {
         InputUtil.waitEnter();
     }
 
-    // Menambah SBN ke daftar
     private static void addSBN() {
         ScreenUtil.clearScreen();
         TableView.displayHeaderSBN();
@@ -157,7 +149,6 @@ public class AdminController {
         InputUtil.waitEnter();
     }
 
-    // Menampilkan daftar SBN
     private static void showSBNList() {
         ScreenUtil.clearScreen();
         if (daftarSBN.isEmpty()) {
@@ -168,12 +159,10 @@ public class AdminController {
         InputUtil.waitEnter();
     }
 
-    // Getter untuk daftar saham
     public static List<Saham> getDaftarSaham() {
         return daftarSaham;
     }
 
-    // Getter untuk daftar SBN
     public static List<SuratBerhargaNegara> getDaftarSBN() {
         return daftarSBN;
     }

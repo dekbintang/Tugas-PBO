@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class AuthController {
     private final Scanner scanner = new Scanner(System.in);
 
-    // Simpan user supaya tidak reset
     private final Admin admin = new Admin("admin", "111");
     private final Customer customer = new Customer("customer", "222");
 
@@ -23,7 +22,6 @@ public class AuthController {
         System.out.print("Password: ");
         String password = scanner.nextLine();
 
-        // Pencocokan username dan password
         if (username.equals(admin.getUsername()) && password.equals(admin.getPassword())) {
             TableView.displayLoginSuccess(username);
             pause();

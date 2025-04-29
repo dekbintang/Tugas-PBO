@@ -12,7 +12,7 @@ public class InputUtil {
             scanner.next();
         }
         int value = scanner.nextInt();
-        scanner.nextLine(); // Membersihkan buffer
+        scanner.nextLine();
         return value;
     }
 
@@ -23,7 +23,7 @@ public class InputUtil {
             scanner.next();
         }
         double value = scanner.nextDouble();
-        scanner.nextLine(); // Membersihkan buffer
+        scanner.nextLine();
         return value;
     }
 
