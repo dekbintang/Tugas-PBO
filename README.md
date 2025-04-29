@@ -1,6 +1,6 @@
-# 📘 Pembuatan Program Investasi Sederhana Berbasis Command Line
+# Pembuatan Program Investasi Sederhana Berbasis Command Line
 
-## 💻 Deskripsi Singkat
+## Deskripsi Singkat
 > Hai! Ini adalah proyek kecil kami untuk memenuhi Tugas I PBO.
 <div align="justify">
 Aplikasi Java ini dibuat untuk simulasi investasi sederhana dengan dua jenis pengguna:
@@ -15,7 +15,7 @@ Kode lengkap sudah dilengkapi komentar untuk memudahkan pemahaman. Selamat menco
 </div>
 ---
 
-## 🧑‍💻 Identitas Anggota
+## Identitas Anggota
 | Nama                               | NIM           |
 |------------------------------------|---------------|
 | I Kadek Bintang Adi Bimantara      | 2405551049    |
@@ -23,7 +23,7 @@ Kode lengkap sudah dilengkapi komentar untuk memudahkan pemahaman. Selamat menco
 
 ---
 
-## 🚀 Fitur Utama
+## Fitur Utama
 - [x] Login Admin dan Customer
 - [x] Manajemen Saham (Tambah, Update Harga, Hapus)
 - [x] Manajemen Surat Berharga Negara (Tambah, dan Hapus SBN)
@@ -39,20 +39,20 @@ Kode lengkap sudah dilengkapi komentar untuk memudahkan pemahaman. Selamat menco
 
 ---
 
-## 🛠️ Bagaimana Program Dijalankan
+## Bagaimana Program Dijalankan
 <div align="justify">
 Program ini dijalankan dengan menerapkan konsep Object-Oriented Programming (OOP) secara menyeluruh dalam desain dan implementasinya. Program mengutamakan modularitas, pemisahan tanggung jawab antar class, serta penggunaan alur kontrol yang terstruktur agar lebih terorganisir dan mudah dikembangkan.
 </div>
 
 Konsep yang Digunakan
 
-- ✅ Penggunaan Class dan Object
-- 🔄 Penggunaan Flow Control
-- 📦 Penggunaan ArrayList
-- 🧬 Penerapan Inheritance (Pewarisan)
-- 🔐 Penerapan Encapsulation (Enkapsulasi)
+- Penggunaan Class dan Object
+- Penggunaan Flow Control
+- Penggunaan ArrayList
+- Penerapan Inheritance (Pewarisan)
+- Penerapan Encapsulation (Enkapsulasi)
 
-## ⚙️Penjelasan Program
+## Penjelasan Program
 Berikut adalah tampilan hasil penggunaan program pemesanan online, lengkap dengan beberapa screenshot. Penjelasan mengenai alur kerja kode dijabarkan setelah bagian ini.
 
 ## Menu Utama
