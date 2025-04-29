@@ -171,7 +171,7 @@ public class TableView {
 
         int no = 1;
         for (SahamHolding holding : holdings) {
-            // Menampilkan harga per lembar saham dengan format Rupiah
+
             System.out.printf("| %-5d | %-10s | %-20s | %-10d | %-15s |\n",
                     no++, holding.getCode(), holding.getSaham().getCompanyName(), holding.getQuantity(), formatRupiah(holding.getSaham().getPrice()));
         }
@@ -179,15 +179,23 @@ public class TableView {
     }
 
     public static void displayPortfolioSBNTable(List<SuratBerhargaNegaraHolding> holdings) {
-        System.out.println("========================================================");
-        System.out.printf("| %-5s | %-20s | %-20s |\n", "No", "Nama SBN", "Jumlah Investasi (Rp)");
-        System.out.println("--------------------------------------------------------");
+        System.out.println("====================================================================================");
+        System.out.printf("| %-5s | %-20s | %-20s | %-25s |\n", "No", "Nama SBN", "Jumlah Investasi (Rp)", "Bunga per Bulan (Rp)");
+        System.out.println("------------------------------------------------------------------------------------");
         int no = 1;
         for (SuratBerhargaNegaraHolding holding : holdings) {
-            String formattedAmount = formatRupiah(holding.getAmount());
-            System.out.printf("| %-5d | %-20s | %-21s |\n", no++, holding.getSuratBerhargaNegara().getName(), formattedAmount);
+            String namaSBN = holding.getSuratBerhargaNegara().getName();
+            double amount = holding.getAmount();
+            double annualInterestRate = holding.getSuratBerhargaNegara().getInterestRate();
+
+            double kuponPerBulan = (annualInterestRate / 100.0 / 12.0) * amount;
+
+            String formattedAmount = formatRupiah(amount);
+            String formattedMonthlyInterest = formatRupiah(kuponPerBulan);
+
+            System.out.printf("| %-5d | %-20s | %-21s | %-25s |\n", no++, namaSBN, formattedAmount, formattedMonthlyInterest);
         }
-        System.out.println("========================================================");
+        System.out.println("====================================================================================");
     }
 
     public static void displayKuponSimulation(double bunga, double nominal, double kuponPerBulan) {

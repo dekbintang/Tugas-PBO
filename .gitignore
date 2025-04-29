@@ -1,0 +1,8 @@
+# Ignore IntelliJ/IDEA settings
+.idea/
+
+# Ignore build output
+out/
+
+# Ignore project files
+tugas PBO.iml
