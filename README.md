@@ -122,9 +122,13 @@ Pengguna yang memilih login sebagai customer akan diminta memasukkan username da
 Sebelum customer membeli saham atau SBN, sistem akan menampilkan pesan bahwa belum ada investasi. Setelah pembelian dilakukan, sistem menampilkan daftar saham dan/atau SBN yang dimiliki beserta jumlah dan nilainya.
 
 ## Beli Saham
+*Ketika membeli saham melebihi dari jumlah lembar saham tersedia:*
+<img src="https://github.com/user-attachments/assets/504ab344-89be-4320-a506-f4a1aafcead7" width="100%" />
+
+*Ketika membeli saham tidak melebihi dari jumlah lembar saham tersedia:*
 <img src="https://github.com/user-attachments/assets/a595057a-b909-4d34-b309-e4c17afc08be" width="100%" />
 <img src="https://github.com/user-attachments/assets/f5ce6fc4-da45-42a5-9d92-5725485c5eb1" width="100%" />
-Customer dapat memilih saham dari daftar dan menentukan jumlah lembar yang ingin dibeli. Sistem kemudian mengonfirmasi pembelian dengan menampilkan pesan bahwa transaksi berhasil.
+Pada gambar pertama, dilakukan pembelian lembar saham melebihi dari lembar tersedia dan akan muncul pesan gagal seperti itu, lalu di gambar kedua customer membeli saham tidak melebihi lembar saham yang tersedia. Customer dapat memilih saham dari daftar dan menentukan jumlah lembar yang ingin dibeli. Sistem kemudian mengonfirmasi pembelian dengan menampilkan pesan bahwa transaksi berhasil.
 
 ## Jual Saham
 *Jika melebihi Lembar saham yang dimiliki:*
@@ -132,11 +136,15 @@ Customer dapat memilih saham dari daftar dan menentukan jumlah lembar yang ingin
 
 *Jika Lembar yang dijual sesuai dengan yang dimiliki:*
 <img src="https://github.com/user-attachments/assets/8abc3276-670a-461d-9cb6-d49f39290ded" width="100%" />
-Pada percobaan pertama, dilakukan penjualan lembar saham melebihi dari lembar yang dimiliki dan akan muncul pesan gagal seperti itu, lalu di gambar kedua customer memilih saham yang ingin dijual dan jumlahnya. Setelah dikonfirmasi, sistem akan menampilkan pesan bahwa saham berhasil dijual.
+Pada gambar pertama, dilakukan penjualan lembar saham melebihi dari lembar yang dimiliki dan akan muncul pesan gagal seperti itu, lalu di gambar kedua customer memilih saham yang ingin dijual dan jumlahnya. Setelah dikonfirmasi, sistem akan menampilkan pesan bahwa saham berhasil dijual.
 
 ## Beli Surat Berharga Negara (SBN)
+*Jika membeli melebihi dari kuota yang tersedia:*
+<img src="https://github.com/user-attachments/assets/f27f2951-734d-41e4-81a2-f1608e2c2cc2" width="100%" />
+
+*Jika membeli tidak melebihi dari kuota yang tersedia:*
 <img src="https://github.com/user-attachments/assets/77f92dd6-dd0d-4257-a852-0315ec3dc128" width="100%" />
-Customer dapat membeli SBN dengan memilih dari daftar dan menentukan jumlah yang diinginkan. Sistem mengonfirmasi transaksi dan memperbarui portofolio customer secara otomatis.
+Pada gambar pertama, Customer mencoba untuk membeli SBN melebihi kuota yang tersedia, maka akan muncul pesan gagal, lalu di gambar kedua Customer membeli SBN tidak melebihi dari kuota yang tersedia. Customer dapat membeli SBN dengan memilih dari daftar dan menentukan jumlah yang diinginkan. Sistem mengonfirmasi transaksi dan memperbarui portofolio customer secara otomatis.
 
 ## Simulasi Kupon SBN
 <img src="https://github.com/user-attachments/assets/21a33d61-736b-4b7c-a83d-0210a7478c5e" width="100%" />
