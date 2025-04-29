@@ -214,7 +214,7 @@ public class TableView {
 
     public static void displayStockNotFound() {
         System.out.println("=====================================================================");
-        System.out.println("||                Saham tidak ditemukan di portofolio Anda.       ||");
+        System.out.println("||      Anda tidak memiliki cukup lembar saham untuk dijual.       ||");
         System.out.println("=====================================================================");
     }
 

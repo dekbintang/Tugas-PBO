@@ -116,14 +116,20 @@ public class CustomerController {
         }
 
         if (selectedHolding == null) {
-            TableView.displayStockNotFound();
+            System.out.println("Saham dengan kode tersebut tidak ditemukan di portofolio Anda.");
             InputUtil.waitEnter();
             return;
         }
 
         int quantityToSell = InputUtil.inputInt("Jumlah lembar yang ingin dijual: ");
-        if (quantityToSell <= 0 || quantityToSell > selectedHolding.getQuantity()) {
-            System.out.println("Jumlah lembar tidak valid.");
+        if (quantityToSell <= 0) {
+            System.out.println("Jumlah lembar tidak boleh nol atau negatif.");
+            InputUtil.waitEnter();
+            return;
+        }
+
+        if (quantityToSell > selectedHolding.getQuantity()) {
+            TableView.displayStockNotFound();
             InputUtil.waitEnter();
             return;
         }
