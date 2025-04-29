@@ -67,8 +67,8 @@ Setelah memilih login, pengguna yang berperan sebagai admin akan diminta memasuk
 Menu ini memungkinkan admin untuk mengelola dua jenis produk investasi, yaitu saham dan surat berharga negara (SBN). Terdapat tiga opsi: kelola saham, kelola SBN, dan logout. Menu ini adalah pusat kontrol bagi admin untuk mengatur data investasi yang tersedia dalam sistem.
 
 ## Menu Saham
-<img src="https://github.com/user-attachments/assets/a3ae912e-c27b-4d13-a7dd-c9df5528e085" width="100%" />
-Dalam menu ini, admin bisa menambahkan data saham baru, mengubah harga saham yang sudah ada, melihat daftar saham yang tersedia, atau kembali ke menu sebelumnya. Fitur ini penting untuk memperbarui informasi terkait saham yang ditawarkan kepada customer.
+<img src="https://github.com/user-attachments/assets/a7dc9ac3-baa9-4daf-9c25-b8f9bec6205b" width="100%" />
+Dalam menu ini, admin bisa menambahkan data saham baru, mengubah harga saham yang sudah ada, melihat daftar saham yang tersedia, menghapus saham yang tersedia, atau kembali ke menu sebelumnya. Fitur ini penting untuk memperbarui informasi terkait saham yang ditawarkan kepada customer.
 
 ## Tambah Saham
 <img src="https://github.com/user-attachments/assets/dbc97d65-1a2c-4c44-ac11-c96c2971a164" width="100%" />
@@ -89,8 +89,8 @@ Admin bisa memilih saham yang ingin diubah harganya, kemudian memasukkan harga b
 Gambar ini menunjukkan perbandingan daftar saham sebelum dan sesudah harga diubah. Ini menampilkan bagaimana sistem memperbarui data secara real-time setelah admin melakukan perubahan.
 
 ## Menu Surat Berharga Negara (SBN)
-<img src="https://github.com/user-attachments/assets/ba10a878-46c3-4c71-be6f-bd3a7af03265" width="100%" />
-Mirip dengan menu saham, admin bisa memilih untuk menambah SBN baru, melihat daftar SBN yang tersedia, atau kembali ke menu admin. Menu ini dirancang untuk mengatur produk investasi jenis surat berharga negara.
+<img src="https://github.com/user-attachments/assets/ccbf87a9-6358-41a2-87d3-4a23137c2fea" width="100%" />
+Mirip dengan menu saham, admin bisa memilih untuk menambah SBN baru, melihat daftar SBN yang tersedia, menghapus SBN yang tersedia, atau kembali ke menu admin. Menu ini dirancang untuk mengatur produk investasi jenis surat berharga negara.
 
 ## Tambah Surat Berharga Negara (SBN)
 <img src="https://github.com/user-attachments/assets/50248cb7-6f5c-4389-af06-c3878238667f" width="100%" />
@@ -114,11 +114,11 @@ Menampilkan semua SBN yang telah dimasukkan oleh admin, termasuk informasi penti
 Pengguna yang memilih login sebagai customer akan diminta memasukkan username dan password mereka. Jika berhasil, sistem mengkonfirmasi login dan mengizinkan customer mengakses fitur-fitur seperti pembelian, penjualan, dan simulasi investasi.
 
 ## Lihat Portofolio
-*Sebelum menambah:*
+*Sebelum membeli:*
 <img src="https://github.com/user-attachments/assets/9c52341c-88bf-444f-8041-384d54494da8" width="100%" />
 
-*Setelah menambah:*  
-<img src="https://github.com/user-attachments/assets/16445b40-4f3c-4a8f-b57c-e60586180f7f" width="100%" />
+*Setelah membeli:*  
+<img src="https://github.com/user-attachments/assets/2983e911-0b4f-47b0-b08a-b6aff8a6f5b4" width="100%" />
 Sebelum customer membeli saham atau SBN, sistem akan menampilkan pesan bahwa belum ada investasi. Setelah pembelian dilakukan, sistem menampilkan daftar saham dan/atau SBN yang dimiliki beserta jumlah dan nilainya.
 
 ## Beli Saham
