@@ -5,7 +5,6 @@ import src.util.InputUtil;
 import src.util.ScreenUtil;
 import src.user.Customer;
 import src.view.TableView;
-//import src.view.TableView;
 
 import static src.controller.AdminController.*;
 
@@ -98,7 +97,6 @@ public class CustomerController {
 
     private static void sellSaham(Portfolio portfolio) {
         ScreenUtil.clearScreen();
-        System.out.println("=== Jual Saham ===");
         if (portfolio.getSahamHoldings().isEmpty()) {
             System.out.println("Anda tidak memiliki saham.");
             InputUtil.waitEnter();
@@ -184,7 +182,7 @@ public class CustomerController {
         sbnDipilih.setQuota(sbnDipilih.getQuota() - jumlah);
         portfolio.buySuratBerhargaNegara(sbnDipilih, jumlah);
 
-        System.out.println("Berhasil membeli SBN " + sbnDipilih.getName() + " sebesar Rp " + jumlah);
+        System.out.println("Berhasil membeli SBN " + sbnDipilih.getName() + " sebesar " + sbnDipilih.formatRupiah(jumlah));
         InputUtil.waitEnter();
     }
 
