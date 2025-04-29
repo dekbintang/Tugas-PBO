@@ -16,10 +16,10 @@ Kode lengkap sudah dilengkapi komentar untuk memudahkan pemahaman. Selamat menco
 ---
 
 ## Identitas Anggota
-| Nama                               | NIM           |
-|------------------------------------|---------------|
-| I Kadek Bintang Adi Bimantara      | 2405551049    |
-| Richard Christian Mozart Diazoni   | 2405551019    |
+| Nama                               | NIM           | Kelas  |
+|------------------------------------|---------------|--------|
+| I Kadek Bintang Adi Bimantara      | 2405551049    | PBO B  |
+| Richard Christian Mozart Diazoni   | 2405551019    | PBO B  |
 
 ---
 
