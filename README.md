@@ -23,18 +23,6 @@ Kode lengkap sudah dilengkapi komentar untuk memudahkan pemahaman. Selamat menco
 
 ---
 
-## 🗺️ Daftar Isi
-- [Deskripsi Singkat](#-deskripsi-singkat)
-- [Identitas Anggota](#-identitas-anggota)
-- [Fitur Utama](#-fitur-utama)
-- [Struktur Folder](#-struktur-folder)
-- [Cara Menjalankan](#-cara-menjalankan)
-- [UML Diagram](#-uml-diagram)
-- [Contoh Screenshot](#-contoh-screenshot)
-- [Lisensi](#-lisensi)
-
----
-
 ## 🚀 Fitur Utama
 - [x] Login Admin dan Customer
 - [x] Manajemen Saham (Tambah, Update Harga, Hapus)
@@ -52,37 +40,13 @@ Program ini dijalankan dengan menerapkan konsep Object-Oriented Programming (OOP
 
 Konsep yang Digunakan
 
-✅ Penggunaan Class dan Object
-Setiap entitas seperti Admin, Customer, Saham, dan SBN direpresentasikan sebagai class yang memiliki atribut dan metode masing-masing. Objek-objek dibuat dari class untuk menjalankan berbagai fungsionalitas yang tersedia.
+- ✅ Penggunaan Class dan Object
+- 🔄 Penggunaan Flow Control
+- 📦 Penggunaan ArrayList
+- 🧬 Penerapan Inheritance (Pewarisan)
+- 🔐 Penerapan Encapsulation (Enkapsulasi)
 
-🔄 Penggunaan Flow Control
-Struktur kontrol program melibatkan:
-- while loop untuk pengulangan menu utama, memastikan program tetap berjalan hingga pengguna memilih untuk keluar.
-- do-while loop untuk pengulangan input, memastikan bahwa input minimal dieksekusi satu kali sebelum validasi dilakukan.
-- for-each loop digunakan untuk melakukan iterasi pada daftar data seperti daftar saham, SBN, atau portofolio investasi.
-- if-else dan switch-case digunakan untuk pengambilan keputusan berdasarkan input pengguna, seperti memilih menu yang akan dijalankan atau melakukan pengecekan validasi.
-
-📦 Penggunaan ArrayList
-ArrayList digunakan untuk menyimpan koleksi data dinamis seperti:
-- Daftar saham
-- Daftar surat berharga negara (SBN)
-- Portofolio investasi customer
-
-Semua data ini tersimpan dalam memori selama program berjalan (tanpa database), memungkinkan program untuk lebih ringan dan sederhana.
-
-🧬 Penerapan Inheritance (Pewarisan)
-- Class AdminUser dan CustomerUser mewarisi class BaseUser.
-- Inheritance ini menyederhanakan struktur pewarisan atribut umum seperti username, password, dan role yang diperlukan untuk otentikasi dan kontrol akses pengguna.
-
-📚 Nested Class
-Beberapa class disusun sebagai nested class (class di dalam class) untuk mengelompokkan logika yang saling terkait. Dengan demikian, struktur program menjadi lebih modular dan lebih mudah dipahami, serta meminimalkan duplikasi kode.
-
-🔐 Penerapan Encapsulation (Enkapsulasi)
-- Atribut penting di setiap class diset private atau protected untuk membatasi akses langsung dari luar class.
-- Disediakan method getter dan setter untuk mengelola data internal secara aman.
-- Dengan enkapsulasi, integritas data lebih terjaga, dan kode menjadi lebih mudah untuk dikembangkan atau di-maintain tanpa mengganggu bagian lain dari program.
-
-## Penjelasan Program
+## ⚙️Penjelasan Program
 Berikut adalah tampilan hasil penggunaan program pemesanan online, lengkap dengan beberapa screenshot. Penjelasan mengenai alur kerja kode dijabarkan setelah bagian ini.
 
 ## Menu Utama
