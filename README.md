@@ -53,14 +53,14 @@ Berikut adalah tampilan hasil penggunaan program pemesanan online, lengkap denga
 <img src="https://github.com/user-attachments/assets/377b8de8-b2de-4f2e-bd02-88789e244723" width="100%" />
 Pada tampilan awal, pengguna akan disajikan dengan menu utama yang menawarkan dua opsi utama: login dan keluar. Dari sini, pengguna dapat memilih untuk masuk ke dalam sistem dengan login, atau keluar dari aplikasi. Tampilan ini menjadi titik awal sebelum masuk ke sistem sebagai admin atau customer.
 
+## Login Gagal
+<img src="https://github.com/user-attachments/assets/d1b6bafe-ea8c-41ea-823a-2de6ae83c1e8" width="100%" />
+<img src="https://github.com/user-attachments/assets/e9140a04-8929-43ba-bfc7-338153e86e7f" width="100%" />
+
 ## Login Admin
 <img src="https://github.com/user-attachments/assets/ebf11aba-c68e-413e-86da-6faf2984698a" width="100%" />
-<img src="https://github.com/user-attachments/assets/ebf11aba-c68e-413e-86da-6faf2984698a" width="100%" />
-Setelah memilih login, pengguna yang berperan sebagai admin akan diminta memasukkan username dan password mereka. Jika informasi yang dimasukkan benar, maka sistem akan menampilkan pesan bahwa login berhasil, dan pengguna diarahkan ke menu admin. Jika tidak sesuai, sistem akan meminta untuk mengulang login kembali.
-
-## Menu Awal Setelah Login
 <img src="https://github.com/user-attachments/assets/1e9409b6-027c-4c43-b7c0-04ca0bc154b1" width="100%" />
-Setelah berhasil login sebagai admin, sistem menampilkan notifikasi keberhasilan login dan meminta pengguna menekan tombol untuk melanjutkan. Hal ini mengarah ke tampilan menu admin yang menyediakan berbagai fitur manajemen.
+Setelah memilih login, pengguna yang berperan sebagai admin akan diminta memasukkan username dan password mereka. Jika informasi yang dimasukkan benar, maka sistem akan menampilkan pesan bahwa login berhasil, dan pengguna diarahkan ke menu admin. Jika tidak sesuai, sistem akan meminta untuk mengulang login kembali.
 
 ## Menu Admin
 <img src="https://github.com/user-attachments/assets/e6422e5d-bd2b-4f41-8c64-2d9f05d94ff5" width="100%" />
