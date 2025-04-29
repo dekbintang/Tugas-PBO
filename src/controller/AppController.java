@@ -8,9 +8,9 @@ import src.util.ScreenUtil;
 import src.view.TableView;
 
 public class AppController {
-    public static void run() {
-        AuthController auth = new AuthController();
+    private static final AuthController auth = new AuthController();
 
+    public static void run() {
         while (true) {
             ScreenUtil.clearScreen();
             TableView.displayMainMenu();
@@ -38,5 +38,9 @@ public class AppController {
                     InputUtil.waitEnter();
             }
         }
+    }
+
+    public static Customer getCustomer() {
+        return auth.getCustomer();
     }
 }

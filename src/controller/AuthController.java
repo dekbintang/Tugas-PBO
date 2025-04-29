@@ -37,6 +37,10 @@ public class AuthController {
         }
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
+
     private void pause() {
         System.out.print("Tekan Enter untuk melanjutkan...");
         scanner.nextLine();

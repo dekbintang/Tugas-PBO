@@ -66,4 +66,13 @@ public class Portfolio {
         }
         return null;
     }
+
+    public void removeSahamIfExists(Saham saham) {
+        sahamHoldings.removeIf(holding -> holding.getSaham().equals(saham));
+    }
+
+    public void removeSBNIfExists(SuratBerhargaNegara suratBerhargaNegara) {
+        suratBerhargaNegaraHoldings.removeIf(holding -> holding.getSuratBerhargaNegara().equals(suratBerhargaNegara));
+    }
+
 }

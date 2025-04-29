@@ -53,14 +53,14 @@ Berikut adalah tampilan hasil penggunaan program pemesanan online, lengkap denga
 <img src="https://github.com/user-attachments/assets/377b8de8-b2de-4f2e-bd02-88789e244723" width="100%" />
 Pada tampilan awal, pengguna akan disajikan dengan menu utama yang menawarkan dua opsi utama: login dan keluar. Dari sini, pengguna dapat memilih untuk masuk ke dalam sistem dengan login, atau keluar dari aplikasi. Tampilan ini menjadi titik awal sebelum masuk ke sistem sebagai admin atau customer.
 
+## Login Gagal
+<img src="https://github.com/user-attachments/assets/d1b6bafe-ea8c-41ea-823a-2de6ae83c1e8" width="100%" />
+<img src="https://github.com/user-attachments/assets/e9140a04-8929-43ba-bfc7-338153e86e7f" width="100%" />
+
 ## Login Admin
 <img src="https://github.com/user-attachments/assets/ebf11aba-c68e-413e-86da-6faf2984698a" width="100%" />
-<img src="https://github.com/user-attachments/assets/ebf11aba-c68e-413e-86da-6faf2984698a" width="100%" />
-Setelah memilih login, pengguna yang berperan sebagai admin akan diminta memasukkan username dan password mereka. Jika informasi yang dimasukkan benar, maka sistem akan menampilkan pesan bahwa login berhasil, dan pengguna diarahkan ke menu admin. Jika tidak sesuai, sistem akan meminta untuk mengulang login kembali.
-
-## Menu Awal Setelah Login
 <img src="https://github.com/user-attachments/assets/1e9409b6-027c-4c43-b7c0-04ca0bc154b1" width="100%" />
-Setelah berhasil login sebagai admin, sistem menampilkan notifikasi keberhasilan login dan meminta pengguna menekan tombol untuk melanjutkan. Hal ini mengarah ke tampilan menu admin yang menyediakan berbagai fitur manajemen.
+Setelah memilih login, pengguna yang berperan sebagai admin akan diminta memasukkan username dan password mereka. Jika informasi yang dimasukkan benar, maka sistem akan menampilkan pesan bahwa login berhasil, dan pengguna diarahkan ke menu admin. Jika tidak sesuai, sistem akan meminta untuk mengulang login kembali.
 
 ## Menu Admin
 <img src="https://github.com/user-attachments/assets/e6422e5d-bd2b-4f41-8c64-2d9f05d94ff5" width="100%" />
@@ -101,6 +101,13 @@ Admin akan diminta mengisi data SBN seperti nama, tingkat bunga, jangka waktu, t
 <img src="https://github.com/user-attachments/assets/56920aa6-49f5-49b1-afca-a6902f26f715" width="100%" />
 Menampilkan semua SBN yang telah dimasukkan oleh admin, termasuk informasi penting seperti bunga, jangka waktu, dan kuota. Menu ini penting untuk mengevaluasi dan memverifikasi produk yang tersedia.
 
+## Hapus Saham dan Surat Berharga Negara (Admin)
+*Saham:*
+<img src="https://github.com/user-attachments/assets/6d6b5970-7ebc-4a78-ba97-7a89f04d0270" width="100%" />
+
+*Surat Berharga Negara:*
+<img src="https://github.com/user-attachments/assets/0382e12c-f87a-48bf-9162-f5a04663dc3f" width="100%" />
+
 ## Login Customer
 <img src="https://github.com/user-attachments/assets/883717cf-ccc1-4820-94e7-f30b4adc8176" width="100%" />
 <img src="https://github.com/user-attachments/assets/daac81c3-197a-4e6c-8ae2-225d83f978ad" width="100%" />
@@ -120,8 +127,12 @@ Sebelum customer membeli saham atau SBN, sistem akan menampilkan pesan bahwa bel
 Customer dapat memilih saham dari daftar dan menentukan jumlah lembar yang ingin dibeli. Sistem kemudian mengonfirmasi pembelian dengan menampilkan pesan bahwa transaksi berhasil.
 
 ## Jual Saham
+*Jika melebihi Lembar saham yang dimiliki:*
+<img src="https://github.com/user-attachments/assets/d503b3a6-247d-496d-8a9f-790b602558cb" width="100%" />
+
+*Jika Lembar yang dijual sesuai dengan yang dimiliki:*
 <img src="https://github.com/user-attachments/assets/8abc3276-670a-461d-9cb6-d49f39290ded" width="100%" />
-Pada fitur ini, customer memilih saham yang ingin dijual dan jumlahnya. Setelah dikonfirmasi, sistem akan menampilkan pesan bahwa saham berhasil dijual.
+Pada percobaan pertama, dilakukan penjualan lembar saham melebihi dari lembar yang dimiliki dan akan muncul pesan gagal seperti itu, lalu di gambar kedua customer memilih saham yang ingin dijual dan jumlahnya. Setelah dikonfirmasi, sistem akan menampilkan pesan bahwa saham berhasil dijual.
 
 ## Beli Surat Berharga Negara (SBN)
 <img src="https://github.com/user-attachments/assets/77f92dd6-dd0d-4257-a852-0315ec3dc128" width="100%" />
