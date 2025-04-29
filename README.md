@@ -28,21 +28,29 @@ Berikut adalah tampilan hasil penggunaan program pemesanan online, lengkap denga
 
 ## Login Admin
 <img src="https://github.com/user-attachments/assets/ebf11aba-c68e-413e-86da-6faf2984698a" width="100%" />
-![image](https://github.com/user-attachments/assets/1e9409b6-027c-4c43-b7c0-04ca0bc154b1)
+<img src="https://github.com/user-attachments/assets/ebf11aba-c68e-413e-86da-6faf2984698a" width="100%" />
+
+## Menu Awal Setelah Login
+<img src="https://github.com/user-attachments/assets/1e9409b6-027c-4c43-b7c0-04ca0bc154b1" width="100%" />
 
 ## Admin Menu
-![image](https://github.com/user-attachments/assets/e6422e5d-bd2b-4f41-8c64-2d9f05d94ff5)
+<img src="https://github.com/user-attachments/assets/e6422e5d-bd2b-4f41-8c64-2d9f05d94ff5" width="100%" />
 
 ## Menu Saham
-![image](https://github.com/user-attachments/assets/a3ae912e-c27b-4d13-a7dd-c9df5528e085)
+<img src="https://github.com/user-attachments/assets/a3ae912e-c27b-4d13-a7dd-c9df5528e085" width="100%" />
 
 ## Tambah Saham
-![image](https://github.com/user-attachments/assets/9ae402c1-15f6-43af-a888-0572ac18251e)
-![image](https://github.com/user-attachments/assets/4fae9b12-8db6-47c4-b1b9-0d4e9f59a291)
+<img src="https://github.com/user-attachments/assets/dbc97d65-1a2c-4c44-ac11-c96c2971a164" width="100%" />
+<img src="https://github.com/user-attachments/assets/56814153-b022-4a57-bb3c-1664681273c1" width="100%" />
 
 ## Ubah Harga Saham
-![image](https://github.com/user-attachments/assets/d97646c1-3198-4f99-a24e-a00b3feed16d)
-![image](https://github.com/user-attachments/assets/fa1bb38a-8778-4688-82a2-48c1bd885074)
+<img src="https://github.com/user-attachments/assets/dbb35cfb-ca3a-4438-8747-fbd48aaaedb1" width="100%" />
+<img src="https://github.com/user-attachments/assets/f9427f95-b3dd-47c5-8b02-cfa2cbb68c41" width="100%" />
+
+## Menu Surat Berharga Negara (SBN)
+<img src="https://github.com/user-attachments/assets/ba10a878-46c3-4c71-be6f-bd3a7af03265" width="100%" />
+
+
 
 
 
