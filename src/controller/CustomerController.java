@@ -82,7 +82,7 @@ public class CustomerController {
         int quantity = InputUtil.inputInt("Jumlah lembar yang ingin dibeli: ");
 
         if (quantity > saham.getQuantity()) {
-            System.out.println("Jumlah lembar yang diminta melebihi stok tersedia (" + saham.getQuantity() + " lembar).");
+            System.out.println("Gagal membeli: jumlah lembar yang diminta melebihi stok tersedia (" + saham.getQuantity() + " lembar).");
             InputUtil.waitEnter();
             return;
         }
@@ -173,7 +173,7 @@ public class CustomerController {
         }
 
         if (jumlah > sbnDipilih.getQuota()) {
-            System.out.println("Jumlah melebihi kuota tersedia.");
+            System.out.println("Gagal membeli: jumlah yang diminta melebihi kuota tersedia (" + sbnDipilih.getQuota() + ").");
             InputUtil.waitEnter();
             return;
         }
