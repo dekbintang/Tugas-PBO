@@ -54,6 +54,9 @@ public class AdminController {
                     showSahamList();
                     break;
                 case 4:
+                    deleteSaham();
+                    break;
+                case 5:
                     return;
                 default:
                     TableView.displayMessage("Pilihan tidak valid.");
@@ -75,6 +78,8 @@ public class AdminController {
                     showSBNList();
                     break;
                 case 3:
+                    deleteSBN();
+                case 4:
                     return;
                 default:
                     TableView.displayMessage("Pilihan tidak valid.");
@@ -133,6 +138,29 @@ public class AdminController {
         InputUtil.waitEnter();
     }
 
+    private static void deleteSaham() {
+        ScreenUtil.clearScreen();
+        if (daftarSaham.isEmpty()) {
+            TableView.displayMessage("Tidak ada saham yang tersedia untuk dihapus.");
+            InputUtil.waitEnter();
+            return;
+        }
+
+        TableView.displaySahamTable(daftarSaham);
+
+        int pilihSaham = InputUtil.inputInt("Pilih nomor saham yang ingin dihapus: ");
+        if (pilihSaham < 1 || pilihSaham > daftarSaham.size()) {
+            TableView.displayMessage("Pilihan tidak valid.");
+            InputUtil.waitEnter();
+            return;
+        }
+
+        Saham sahamDihapus = daftarSaham.remove(pilihSaham - 1);
+        TableView.displayMessage("Saham " + sahamDihapus.getCompanyName() + " berhasil dihapus.");
+        InputUtil.waitEnter();
+    }
+
+
     private static void addSBN() {
         ScreenUtil.clearScreen();
         TableView.displayHeaderSBN();
@@ -158,6 +186,29 @@ public class AdminController {
         }
         InputUtil.waitEnter();
     }
+
+    private static void deleteSBN() {
+        ScreenUtil.clearScreen();
+        if (daftarSBN.isEmpty()) {
+            TableView.displayMessage("Tidak ada SBN yang tersedia untuk dihapus.");
+            InputUtil.waitEnter();
+            return;
+        }
+
+        TableView.displaySBNTable(daftarSBN);
+
+        int pilihSBN = InputUtil.inputInt("Pilih nomor SBN yang ingin dihapus: ");
+        if (pilihSBN < 1 || pilihSBN > daftarSBN.size()) {
+            TableView.displayMessage("Pilihan tidak valid.");
+            InputUtil.waitEnter();
+            return;
+        }
+
+        SuratBerhargaNegara sbnDihapus = daftarSBN.remove(pilihSBN - 1);
+        TableView.displayMessage("SBN " + sbnDihapus.getName() + " berhasil dihapus.");
+        InputUtil.waitEnter();
+    }
+
 
     public static List<Saham> getDaftarSaham() {
         return daftarSaham;
